@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Influencer Report | Unique Perspective</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Page-specific overrides ── */
+    .report-hero {
+      min-height: 55vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.55)),
+                  url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&fm=webp&w=1920') center/cover no-repeat;
+      padding: 8rem 4rem 4rem;
+    }
+    .report-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.8rem;
+      color: var(--soft-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+    .report-hero .meta {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: rgba(255,255,255,0.5);
+      margin-top: 1.5rem;
+      line-height: 2;
+    }
+    .report-hero .meta span {
+      color: var(--soft-gold);
+    }
+
+    /* ── Report body layout ── */
+    .report-body {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 4rem;
+    }
+
+    /* ── Section headings ── */
+    .report-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: var(--soft-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin: 4rem 0 1.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(198, 167, 106, 0.15);
+    }
+    .report-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--soft-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin: 3rem 0 1rem;
+    }
+    .report-body p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem;
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ── Stat bar ── */
+    .stat-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+    .stat-item {
+      background: #0A0A0A;
+      border: 1px solid rgba(198, 167, 106, 0.12);
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .stat-item:hover {
+      border-color: var(--soft-gold);
+    }
+    .stat-item .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      color: var(--soft-gold);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .stat-item .stat-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.5rem;
+    }
+
+    /* ── Tables ── */
+    .report-table-wrap {
+      overflow-x: auto;
+      margin: 1.5rem 0 2.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+    }
+    thead th {
+      background: #0A0A0A;
+      color: var(--soft-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 1rem 1.2rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(198, 167, 106, 0.2);
+      white-space: nowrap;
+    }
+    tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.3s;
+    }
+    tbody tr:hover {
+      background: rgba(198, 167, 106, 0.04);
+    }
+    tbody td {
+      padding: 0.9rem 1.2rem;
+      color: rgba(255,255,255,0.75);
+      vertical-align: middle;
+    }
+    tbody td:first-child {
+      color: rgba(255,255,255,0.3);
+      font-size: 0.75rem;
+    }
+    .channel-name {
+      color: #fff;
+      font-weight: 500;
+    }
+    .score-high { color: var(--soft-gold); }
+    .score-mid  { color: rgba(198, 167, 106, 0.65); }
+    .score-low  { color: rgba(255,255,255,0.4); }
+    .channel-link {
+      color: var(--soft-gold);
+      text-decoration: none;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      border-bottom: 1px solid rgba(198, 167, 106, 0.3);
+      transition: var(--transition);
+    }
+    .channel-link:hover {
+      color: #fff;
+      border-color: #fff;
+    }
+
+    /* ── Keyword grid ── */
+    .keyword-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0 2.5rem;
+    }
+    .keyword-card {
+      background: #0A0A0A;
+      border: 1px solid rgba(198, 167, 106, 0.08);
+      padding: 1.5rem;
+      transition: var(--transition);
+    }
+    .keyword-card:hover {
+      border-color: rgba(198, 167, 106, 0.3);
+    }
+    .keyword-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--soft-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.8rem;
+    }
+    .keyword-card p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* ── Tier cards ── */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0 2.5rem;
+    }
+    .tier-card {
+      background: #0A0A0A;
+      border: 1px solid rgba(198, 167, 106, 0.08);
+      padding: 2rem;
+      transition: var(--transition);
+    }
+    .tier-card:hover { border-color: var(--soft-gold); }
+    .tier-card .tier-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--soft-gold);
+      margin-bottom: 0.5rem;
+    }
+    .tier-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+    .tier-card p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      margin: 0;
+    }
+
+    /* ── Scoring methodology ── */
+    .scoring-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .scoring-item {
+      background: #0A0A0A;
+      border: 1px solid rgba(198, 167, 106, 0.08);
+      padding: 1.5rem;
+    }
+    .scoring-item .pts {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: var(--soft-gold);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .scoring-item h4 {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #fff;
+      margin: 0.5rem 0;
+    }
+    .scoring-item p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      margin: 0;
+    }
+
+    /* ── Divider ── */
+    .gold-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--soft-gold);
+      margin: 2rem 0;
+      opacity: 0.4;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .report-hero h1 { font-size: 2.4rem; }
+      .report-body { padding: 3rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">Unique Perspective</a>
+    <nav>
+      <a href="shop.html">Collections</a>
+      <a href="minerals.html">Catalogue</a>
+      <a href="about.html">Story</a>
+      <a href="influencer-report.html" class="active" style="color: var(--soft-gold);">Influencers</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="report-hero">
+  <div>
+    <p style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.3em; color:rgba(255,255,255,0.4); margin-bottom:1rem;">Market Intelligence</p>
+    <h1>YouTube Influencer<br>Channel Report</h1>
+    <div class="gold-divider" style="margin: 1.5rem auto;"></div>
+    <div class="meta">
+      <span>Product:</span> Manus AI (manus.im) — Autonomous AI Agent &amp; Action Engine &nbsp;|&nbsp;
+      <span>Region:</span> United States &nbsp;|&nbsp;
+      <span>Date:</span> May 15, 2026
+    </div>
+  </div>
+</section>
+
+<div class="report-body">
+
+  <!-- Stats -->
+  <div class="stat-bar">
+    <div class="stat-item">
+      <div class="stat-number">144</div>
+      <div class="stat-label">Channels Analyzed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">31</div>
+      <div class="stat-label">Channels Recommended</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">6</div>
+      <div class="stat-label">Content Categories</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">3</div>
+      <div class="stat-label">Partnership Tiers</div>
+    </div>
+  </div>
+
+  <!-- Executive Summary -->
+  <h2>Executive Summary</h2>
+  <p>This report identifies YouTube influencer channels best suited for collaboration with Manus AI, the autonomous AI agent that executes tasks end-to-end — from web research and data analysis to website building and workflow automation. The recommended channels were discovered through systematic keyword searches across six content categories, then scored on subscriber scale, geographic relevance, content alignment, and multi-query discovery breadth.</p>
+  <p>The target audience for Manus AI in the US market spans AI enthusiasts and early adopters, productivity-focused professionals, no-code builders, startup founders, developers, and digital marketers. Channels were selected to cover all these segments, prioritizing US-based creators with established audiences in the 50K–5M subscriber range.</p>
+
+  <!-- Keyword Strategy -->
+  <h2>Keyword Strategy</h2>
+  <p>The following keyword categories were used to surface relevant channels on YouTube:</p>
+  <div class="keyword-grid">
+    <div class="keyword-card">
+      <h4>Autonomous AI Agents</h4>
+      <p>"Manus AI review", "autonomous AI agent 2025", "best AI agents demo", "AI agent vs ChatGPT"</p>
+    </div>
+    <div class="keyword-card">
+      <h4>AI Productivity Tools</h4>
+      <p>"best AI productivity tools 2025", "AI automation workflow tutorial", "AI tools for entrepreneurs"</p>
+    </div>
+    <div class="keyword-card">
+      <h4>No-Code / App Building</h4>
+      <p>"build website with AI no code", "AI app builder review 2025"</p>
+    </div>
+    <div class="keyword-card">
+      <h4>AI Research &amp; Data</h4>
+      <p>"AI research tool deep research", "AI data analysis automation"</p>
+    </div>
+    <div class="keyword-card">
+      <h4>LLM / Tech Reviews</h4>
+      <p>"new AI tools review 2025", "ChatGPT alternatives AI tools", "LLM agent comparison"</p>
+    </div>
+    <div class="keyword-card">
+      <h4>Business &amp; Startup AI</h4>
+      <p>"AI tools for startups 2025", "AI business automation tools"</p>
+    </div>
+  </div>
+
+  <!-- Recommended Channels -->
+  <h2>Recommended Influencer Channels</h2>
+  <p>Channels are organized by content category. The Relevance Score (0–100+) reflects a composite of subscriber scale, geographic fit, content keyword alignment, and multi-query discovery breadth.</p>
+
+  <!-- AI/ML & Agents -->
+  <h3>AI / ML &amp; Agents</h3>
+  <p>These channels focus directly on AI tools, LLMs, and autonomous agents — the closest match to Manus AI's core product positioning. Audiences are highly technical early adopters who actively seek new AI tools.</p>
+  <div class="report-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Channel</th>
+          <th>Subscribers</th>
+          <th>Country</th>
+          <th>Relevance Score</th>
+          <th>Sample Content</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td class="channel-name">Futurepedia and AI Agent Lab</td><td>704K</td><td>United States</td><td class="score-high">105 ★★★★★</td><td>From Zero to Your First AI Agent in 25 Minutes (No Code)</td></tr>
+        <tr><td>2</td><td class="channel-name">Matt Wolfe</td><td>943K</td><td>United States</td><td class="score-high">101 ★★★★★</td><td>The AI Tools I Actually Use Every Day (2026)</td></tr>
+        <tr><td>3</td><td class="channel-name">WorldofAI</td><td>218K</td><td>Canada</td><td class="score-high">85 ★★★★☆</td><td>Hermes Agent NEW Desktop App — The 24/7 Self-Evolving AI</td></tr>
+        <tr><td>4</td><td class="channel-name">Jake Dawson</td><td>55.3K</td><td>United States</td><td class="score-high">82 ★★★★☆</td><td>This Unknown AI Will Blow Your Mind! BYE CHATGPT… (Manus)</td></tr>
+        <tr><td>5</td><td class="channel-name">AI Revolution</td><td>544K</td><td>United States</td><td class="score-high">81 ★★★★☆</td><td>Hermes Agent's Insane New Update Just Broke OpenClaw</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- AI Productivity & Automation -->
+  <h3>AI Productivity &amp; Automation</h3>
+  <p>Creators covering AI-powered productivity, workflow automation, and tool tutorials. Their audiences are professionals and knowledge workers seeking to leverage AI in daily work — a primary use case for Manus AI.</p>
+  <div class="report-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Channel</th>
+          <th>Subscribers</th>
+          <th>Country</th>
+          <th>Relevance Score</th>
+          <th>Sample Content</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>6</td><td class="channel-name">Kevin Stratvert</td><td>4.25M</td><td>United States</td><td class="score-high">90 ★★★★★</td><td>3 Ways Manus AI Is Quietly Beating ChatGPT Right Now</td></tr>
+        <tr><td>7</td><td class="channel-name">Liam Ottley</td><td>786K</td><td>New Zealand</td><td class="score-high">85 ★★★★☆</td><td>How to Build &amp; Sell AI Automations: Ultimate Beginner's Guide</td></tr>
+        <tr><td>8</td><td class="channel-name">Silicon Valley Girl</td><td>1.53M</td><td>United States</td><td class="score-mid">79 ★★★★☆</td><td>I Spent $10K Testing 100+ AI Tools — These 11 Are the Only Ones Worth It</td></tr>
+        <tr><td>9</td><td class="channel-name">Skill Leap AI</td><td>328K</td><td>United States</td><td class="score-mid">77 ★★★★☆</td><td>7 Game Changing New Manus AI Use Cases</td></tr>
+        <tr><td>10</td><td class="channel-name">Alicia Lyttle</td><td>175K</td><td>United States</td><td class="score-mid">75 ★★★★☆</td><td>How I Use AI to Automate My Business &amp; Work 10X Faster</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- No-Code / App Building -->
+  <h3>No-Code / App Building</h3>
+  <p>Channels dedicated to building apps, websites, and tools without traditional coding. Manus AI's website builder and app development features are directly relevant to this audience.</p>
+  <div class="report-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Channel</th>
+          <th>Subscribers</th>
+          <th>Country</th>
+          <th>Relevance Score</th>
+          <th>Sample Content</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>11</td><td class="channel-name">Christian Peverelli — WeAreNoCode</td><td>309K</td><td>United States</td><td class="score-mid">77 ★★★★☆</td><td>How To Build A $10,000 Website In 30 Minutes (AI + No Code)</td></tr>
+        <tr><td>12</td><td class="channel-name">Mikey No Code</td><td>128K</td><td>United States</td><td class="score-mid">72 ★★★☆☆</td><td>Top 5 FREE AI Website Builders to Create $10,000 Sites</td></tr>
+        <tr><td>13</td><td class="channel-name">Skillademia</td><td>58K</td><td>United States</td><td class="score-mid">67 ★★★☆☆</td><td>The 5 Best AI Productivity Tools in 2026 (You'll Actually Use)</td></tr>
+        <tr><td>14</td><td class="channel-name">Codex Community</td><td>215K</td><td>Australia</td><td class="score-mid">65 ★★★☆☆</td><td>OpenAI Deep Research in 4 mins</td></tr>
+        <tr><td>15</td><td class="channel-name">Tom Nassr | XRAY</td><td>19K</td><td>United States</td><td class="score-mid">64 ★★★☆☆</td><td>Put ChatGPT to Work with Agent Mode</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Business & Entrepreneurship -->
+  <h3>Business &amp; Entrepreneurship</h3>
+  <p>Entrepreneurship and startup-focused channels whose audiences actively adopt new tools for competitive advantage. Manus AI's research, GTM, and automation features resonate strongly here.</p>
+  <div class="report-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Channel</th>
+          <th>Subscribers</th>
+          <th>Country</th>
+          <th>Relevance Score</th>
+          <th>Sample Content</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>16</td><td class="channel-name">Dan Martell</td><td>2.71M</td><td>Canada</td><td class="score-mid">75 ★★★★☆</td><td>7 Insane Use Cases For Manus AI (with Zero Code)</td></tr>
+        <tr><td>17</td><td class="channel-name">a16z</td><td>273K</td><td>United States</td><td class="score-mid">70 ★★★☆☆</td><td>2025 AI Productivity Stack: Top 10 AI Tools I Use Weekly</td></tr>
+        <tr><td>18</td><td class="channel-name">Curious Refuge</td><td>265K</td><td>United States</td><td class="score-mid">69 ★★★☆☆</td><td>Adobe just changed the creative AI world</td></tr>
+        <tr><td>19</td><td class="channel-name">Alex Hormozi</td><td>4.18M</td><td>United States</td><td class="score-mid">67 ★★★☆☆</td><td>How to Use AI in Your Business in 2026</td></tr>
+        <tr><td>20</td><td class="channel-name">Santrel Media</td><td>1.12M</td><td>United States</td><td class="score-mid">67 ★★★☆☆</td><td>How To Use Base44 — No Code AI App Builder Tutorial (2026)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Developer / Coding -->
+  <h3>Developer / Coding</h3>
+  <p>Developer-focused channels covering Python, software engineering, and data science. Relevant for Manus AI's coding assistance, API, and data analysis capabilities.</p>
+  <div class="report-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Channel</th>
+          <th>Subscribers</th>
+          <th>Country</th>
+          <th>Relevance Score</th>
+          <th>Sample Content</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>21</td><td class="channel-name">Tina Huang</td><td>1.19M</td><td>United States</td><td class="score-mid">69 ★★★☆☆</td><td>Local AI Agents In 26 Minutes</td></tr>
+        <tr><td>22</td><td class="channel-name">Daniel — Tech &amp; Data</td><td>528K</td><td>N/A</td><td class="score-mid">64 ★★★☆☆</td><td>Manus AI Review — 2026</td></tr>
+        <tr><td>23</td><td class="channel-name">Julia McCoy</td><td>292K</td><td>United States</td><td class="score-low">62 ★★★☆☆</td><td>Why Meta Just Spent $2 Billion to Acquire Manus AI</td></tr>
+        <tr><td>24</td><td class="channel-name">Alex Finn</td><td>200K</td><td>United States</td><td class="score-low">53 ★★☆☆☆</td><td>Hermes Agent is blowing me away...</td></tr>
+        <tr><td>25</td><td class="channel-name">CodeHead</td><td>86.4K</td><td>United States</td><td class="score-low">51 ★★☆☆☆</td><td>99% of Developers Don't Understand AI Agents!</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Marketing & SEO -->
+  <h3>Marketing &amp; SEO</h3>
+  <p>Digital marketing and SEO creators whose audiences use AI for content creation, campaign analysis, and competitor research — all supported by Manus AI.</p>
+  <div class="report-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Channel</th>
+          <th>Subscribers</th>
+          <th>Country</th>
+          <th>Relevance Score</th>
+          <th>Sample Content</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>26</td><td class="channel-name">Julian Goldie SEO</td><td>389K</td><td>United Kingdom</td><td class="score-low">48 ★★☆☆☆</td><td>NEW Manus Cloud Computer is INSANE!</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- General Tech -->
+  <h3>General Tech</h3>
+  <p>Broad technology review channels with large, diverse audiences. Suitable for awareness campaigns and product demos.</p>
+  <div class="report-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Channel</th>
+          <th>Subscribers</th>
+          <th>Country</th>
+          <th>Relevance Score</th>
+          <th>Sample Content</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>27</td><td class="channel-name">NetworkChuck</td><td>5.25M</td><td>United States</td><td class="score-mid">63 ★★★☆☆</td><td>Deep Research.....but Open Source</td></tr>
+        <tr><td>28</td><td class="channel-name">All Things Secured</td><td>431K</td><td>United States</td><td class="score-low">57 ★★☆☆☆</td><td>STOP using ChatGPT (use private AI alternatives)</td></tr>
+        <tr><td>29</td><td class="channel-name">Mrwhosetheboss</td><td>22.5M</td><td>United Kingdom</td><td class="score-low">56 ★★☆☆☆</td><td>The Ultimate AI Battle!</td></tr>
+        <tr><td>30</td><td class="channel-name">AI Master</td><td>278K</td><td>United States</td><td class="score-low">53 ★★☆☆☆</td><td>AI Agents Explained: How to Create and Use AI Agents</td></tr>
+        <tr><td>31</td><td class="channel-name">Ai Convo</td><td>66K</td><td>United States</td><td class="score-low">53 ★★☆☆☆</td><td>AI agents activate secret language. ChatGPT is confused...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Collaboration Strategy -->
+  <h2>Collaboration Strategy</h2>
+  <p>The report recommends a three-tier partnership model, calibrated to audience size and engagement depth.</p>
+  <div class="tier-grid">
+    <div class="tier-card">
+      <div class="tier-label">Tier 1</div>
+      <h4>Mega &amp; Large Influencers</h4>
+      <p>500K+ subscribers. Channels such as Matt Wolfe, Kevin Stratvert, Futurepedia, Liam Ottley, and AI Revolution. Recommended for sponsored deep-dive reviews, product walkthrough videos, and "day in the life with Manus AI" integrations. Best for broad awareness and product launches.</p>
+    </div>
+    <div class="tier-card">
+      <div class="tier-label">Tier 2</div>
+      <h4>Mid-Tier Influencers</h4>
+      <p>100K–500K subscribers. Channels like Skill Leap AI, WeAreNoCode, Alicia Lyttle, and Mikey No Code. Highly engaged niche audiences with strong purchase intent. Ideal for tutorial collaborations, use-case demonstrations, and affiliate partnerships.</p>
+    </div>
+    <div class="tier-card">
+      <div class="tier-label">Tier 3</div>
+      <h4>Micro &amp; Growing Influencers</h4>
+      <p>10K–100K subscribers. Channels such as Jake Dawson, Be Productive, Rob The AI Guy, and Brock Mesarich. Tightly focused audiences with high engagement rates. Ideal for long-term ambassador programs, early access partnerships, and community-building initiatives.</p>
+    </div>
+  </div>
+
+  <!-- Content Format Recommendations -->
+  <h2>Content Format Recommendations</h2>
+  <div class="report-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Format</th>
+          <th>Best Channels</th>
+          <th>Expected Outcome</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="channel-name">Sponsored product review (10–20 min)</td><td>Tier 1 AI/ML channels</td><td>Broad awareness, SEO backlinks</td></tr>
+        <tr><td class="channel-name">Tutorial / use-case walkthrough</td><td>Tier 2 Productivity &amp; No-Code</td><td>High conversion, tutorial traffic</td></tr>
+        <tr><td class="channel-name">"AI tools roundup" inclusion</td><td>Tech review channels</td><td>Discovery by comparison shoppers</td></tr>
+        <tr><td class="channel-name">Live demo / Q&amp;A stream</td><td>Developer &amp; AI Agent channels</td><td>Community trust, deep engagement</td></tr>
+        <tr><td class="channel-name">Affiliate program</td><td>All tiers</td><td>Performance-based ROI tracking</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Scoring Methodology -->
+  <h2>Scoring Methodology</h2>
+  <p>Each channel was evaluated on four dimensions to produce a composite Relevance Score:</p>
+  <div class="scoring-grid">
+    <div class="scoring-item">
+      <div class="pts">40</div>
+      <h4>Subscriber Scale</h4>
+      <p>Tiered scoring from micro (5 pts) to mega (40 pts)</p>
+    </div>
+    <div class="scoring-item">
+      <div class="pts">15</div>
+      <h4>Geographic Fit</h4>
+      <p>US-based (15 pts), English-speaking (10 pts), unknown (8 pts)</p>
+    </div>
+    <div class="scoring-item">
+      <div class="pts">30</div>
+      <h4>Content Relevance</h4>
+      <p>AI/automation keyword density in title, description, and tags</p>
+    </div>
+    <div class="scoring-item">
+      <div class="pts">10</div>
+      <h4>Discovery Breadth</h4>
+      <p>Number of distinct keyword search queries that surfaced the channel</p>
+    </div>
+  </div>
+
+  <p style="font-size:0.72rem; color:rgba(255,255,255,0.3); margin-top:3rem; text-transform:uppercase; letter-spacing:0.15em;">
+    Report generated using YouTube Search API and YouTube Channel Details API. Subscriber counts and scores reflect data as of May 15, 2026.
+  </p>
+
+</div>
+
+<footer>
+  <div style="max-width: 800px; margin: 0 auto; line-height: 2;">
+    Unique Perspective 8 | Refined Wilderness Luxury<br>
+    &copy; 2026 Morgan Sugg. All Rights Reserved.<br>
+    <a href="privacy.html" style="color: white; margin: 0 1rem;">Privacy</a>
+    <a href="policies.html" style="color: white; margin: 0 1rem;">Policies</a>
+  </div>
+</footer>
+
+</body>
+</html>
