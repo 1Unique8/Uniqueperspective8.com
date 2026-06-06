@@ -1,0 +1,14 @@
+{
+  "name": "up8-platform",
+  "version": "1.0.0",
+  "description": "Automation platform for Unique Perspective 8",
+  "private": true,
+  "scripts": {
+    "sync:woo": "node scripts/sync-to-woocommerce.js",
+    "sync:static": "node scripts/sync-notion-static.js"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.2.15",
+    "@woocommerce/woocommerce-rest-api": "^1.0.1"
+  }
+}
