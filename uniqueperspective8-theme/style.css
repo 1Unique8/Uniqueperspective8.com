@@ -4,7 +4,7 @@ Theme URI: https://uniqueperspective8.com
 Author: Morgan
 Author URI: https://uniqueperspective8.com
 Description: Elegant dark luxury theme for Unique Perspective 8 — ethical BC minerals, handcrafted jewelry, and conscious living. Features gold accents, serif typography, and full WooCommerce support for your artisan shop.
-Version: 1.0.0
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: uniqueperspective8
@@ -50,14 +50,59 @@ nav a:hover {
     color: var(--gold);
 }
 
+/* Hero — left copy / right product frame */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://picsum.photos/id/1015/1920/1080') center/cover no-repeat;
-    height: 80vh;
+    background: #050505;
+    min-height: 88vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+    color: #fff;
+    padding: 4rem 1.5rem;
+}
+
+.hero-inner {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.hero-copy {
+    flex: 1.1;
+    text-align: left;
+}
+
+.hero-eyebrow {
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: var(--gold);
+    margin: 0 0 1.25rem;
+}
+
+.hero-copy h1 {
+    font-size: clamp(2.6rem, 5vw, 4.4rem);
+    line-height: 1.05;
+    margin: 0 0 1.5rem;
+}
+
+.hero-copy .accent {
+    color: var(--gold);
+}
+
+.hero-lead {
+    max-width: 34rem;
+    font-size: 1.08rem;
+    color: #cfcfcf;
+    margin: 0 0 2rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .btn {
@@ -74,6 +119,45 @@ nav a:hover {
 .btn:hover {
     background: var(--accent);
     transform: translateY(-2px);
+}
+
+.btn-ghost {
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+}
+
+.btn-ghost:hover {
+    background: rgba(212, 175, 55, 0.12);
+    transform: translateY(-2px);
+}
+
+.hero-media {
+    flex: 0.9;
+    margin: 0;
+    text-align: center;
+}
+
+.hero-media img {
+    width: min(420px, 100%);
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.hero-media figcaption {
+    margin-top: 0.85rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9a9a9a;
+}
+
+@media (max-width: 800px) {
+    .hero-inner {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
 }
 
 footer {
