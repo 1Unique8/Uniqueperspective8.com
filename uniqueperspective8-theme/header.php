@@ -1,42 +1,6 @@
-<?php
-/**
- * The header for our theme
- *
- * @package uniqueperspective8
- */
-?>
-<!DOCTYPE html>
+<?php /** DESIGN REMINDER: Collector's Folio — a compact mineral mark, small-caps navigation, and warm-on-verdigris contrast. */ ?>
+<!doctype html>
 <html <?php language_attributes(); ?>>
-<head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php wp_head(); ?>
-</head>
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-
-<header>
-    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between;">
-        <div class="logo">
-            <?php if ( has_custom_logo() ) : ?>
-                <?php the_custom_logo(); ?>
-            <?php else : ?>
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; text-decoration: none;">
-                    ✨ UNIQUE PERSPECTIVE 8
-                </a>
-            <?php endif; ?>
-        </div>
-
-        <nav>
-            <?php
-            wp_nav_menu( array(
-                'theme_location' => 'primary',
-                'container'      => false,
-                'menu_class'     => 'primary-menu',
-                'fallback_cb'    => false,
-            ) );
-            ?>
-            <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">Shop Now</a>
-        </nav>
-    </div>
-</header>
+<head><meta charset="<?php bloginfo( 'charset' ); ?>"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#20443e"><?php wp_head(); ?></head>
+<body <?php body_class( 'folio-body' ); ?>><?php wp_body_open(); ?>
+<header class="site-header" id="top"><a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'Unique Perspective 8 home', 'uniqueperspective8' ); ?>"><img class="brand-mark" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/luxury/compass-mark.png' ); ?>" alt=""><span class="brand-lockup"><span>Unique</span><span>Perspective <em>8</em></span></span></a><button class="menu-toggle" type="button" aria-label="<?php esc_attr_e( 'Open navigation', 'uniqueperspective8' ); ?>" aria-expanded="false"><?php esc_html_e( 'Menu', 'uniqueperspective8' ); ?></button><nav class="site-nav" aria-label="<?php esc_attr_e( 'Primary navigation', 'uniqueperspective8' ); ?>"><?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'folio-menu', 'fallback_cb' => 'uniqueperspective8_fallback_menu' ) ); ?></nav><a class="header-cta" href="<?php echo esc_url( uniqueperspective8_shop_url() ); ?>"><?php esc_html_e( 'Explore pieces', 'uniqueperspective8' ); ?> <span>↗</span></a></header>

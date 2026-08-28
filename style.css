@@ -1,2 +1,2 @@
-body { font-family: system-ui; }
-.hero { color: white; }
+/* DESIGN REMINDER: Collector's Folio — public GitHub Pages reuses the exact luxury design system supplied with the installable WordPress theme. */
+@import url("uniqueperspective8-theme/assets/folio.css");
