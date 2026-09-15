@@ -3,83 +3,46 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Educational mineral specimens from Unique Perspective 8 — self-collected in British Columbia, labeled by locality and licence.">
   <title>Specimens · Unique Perspective 8</title>
-  <link rel="stylesheet" href="home.css">
-  <style>
-    .page-hero{padding:160px 0 60px}
-    .page-hero h1{font-size:clamp(48px,7vw,88px)}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:28px;padding:0 0 110px}
-    .spec{display:block;border:1px solid var(--line);background:var(--black-soft)}
-    .spec img{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:#1c262a}
-    .spec-body{padding:22px}
-    .spec-body h3{margin:0 0 8px;font-size:26px}
-    .spec-body p{margin:0 0 8px;color:var(--silver);font-size:14px}
-    .tag{display:inline-block;margin-top:10px;color:var(--gold-light);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
-  </style>
+  <link rel="stylesheet" href="theme.css">
 </head>
-<body>
+<body class="bold">
   <header>
-    <nav class="wrap" aria-label="Primary navigation">
-      <a class="brand" href="index.html" aria-label="Unique Perspective 8 home">
-        <span class="logo"><span>8</span></span>
-        <span>Unique Perspective 8</span>
-      </a>
+    <nav class="wrap">
+      <a class="brand" href="index.html"><span class="mark">8</span> Unique Perspective 8</a>
       <div class="nav-links">
-        <a href="index.html#atelier">Atelier</a>
+        <a href="provenance.html">Provenance</a>
+        <a href="policies.html">Policies</a>
         <a href="ethics.html">Ethics</a>
         <a href="specimens.html">Specimens</a>
-        <a href="guidelines.html">Files</a>
-        <a class="shop-button" href="https://shop.uniqueperspective8.com">Visit shop ↗</a>
+        <a class="btn" href="https://shop.uniqueperspective8.com">Shop</a>
       </div>
     </nav>
   </header>
   <main>
-    <section class="page-hero">
-      <div class="wrap">
-        <p class="eyebrow">Field cabinet · educational specimens</p>
-        <h1>Stones that stay stones.</h1>
-        <p class="hero-text">
-          Not jewelry. Not a mine name. Each piece here is a locality specimen
-          for looking at — collected under a Free Miner Certificate and labeled
-          with the ground it came from.
-        </p>
-      </div>
+    <section class="hero-bold wrap">
+      <p class="kicker">Cabinet · educational · not jewelry</p>
+      <h1>The stone keeps its name.</h1>
+      <p class="lead">Each card is a locality sentence, a licence number, and a price. Mine names stay in the ledger.</p>
     </section>
-    <section>
-      <div class="wrap grid">
-        <a class="spec" href="specimens/up8-pen-001.html">
-          <img src="https://drive.google.com/uc?export=view&amp;id=13WEmvp4nfkSJrK1o-f_NEE8SxQgBWT0v" alt="UP8-PEN-001 gneiss cobble, Penticton Highway 97 cut">
-          <div class="spec-body">
-            <h3>Gneiss</h3>
-            <p>UP8-PEN-001 · 64.44 g · CAD $28</p>
-            <p>Highway 97 roadside cut, Penticton. Educational specimen.</p>
-            <span class="tag">Specimen · Buy</span>
-          </div>
-        </a>
-      </div>
+    <section class="wrap card-grid">
+      <a class="pcard" href="specimens/up8-pen-001.html">
+        <img src="https://drive.google.com/uc?export=view&amp;id=13WEmvp4nfkSJrK1o-f_NEE8SxQgBWT0v" alt="UP8-PEN-001 gneiss">
+        <div class="body">
+          <span class="sku">UP8-PEN-001 · PEN</span>
+          <h2>Gneiss</h2>
+          <p class="meta">64.44 g · Hwy 97 roadside cut, Penticton<br>FMC 292907 ACTIVE</p>
+          <span class="stamp">CAD $28 · specimen</span>
+        </div>
+      </a>
     </section>
   </main>
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-top">
-        <div>
-          <a class="brand" href="index.html"><span class="logo"><span>8</span></span><span>Unique Perspective 8</span></a>
-          <p class="footer-note">Educational specimens and jewelry, kept in separate sentences.</p>
-        </div>
-        <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="specimens.html">Specimens</a>
-          <a href="ethics.html">Ethics</a>
-          <a href="https://shop.uniqueperspective8.com">Shop ↗</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
-      <div class="legal">
-        <span>© 2026 Unique Perspective 8</span>
-        <span>FMC 292907 ACTIVE</span>
-      </div>
-    </div>
+  <footer class="site-foot wrap">
+    <a href="provenance.html">Provenance</a>
+    <a href="policies.html">Policies</a>
+    <a href="ethics.html">Ethics</a>
+    <a href="https://buy.stripe.com/8x29AS4Mp7ZWbNa198dwc00">Buy PEN-001</a>
+    <p class="fine">© 2026 Unique Perspective 8 · Up8, LLC · Stripe live</p>
   </footer>
 </body>
 </html>
