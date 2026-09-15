@@ -17,7 +17,7 @@ body.bold{
   line-height:1.45;
 }
 a{color:inherit;text-decoration:none}
-.wrap{width:min(1100px,calc(100% - 40px));margin:0 auto}
+.wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
 .bold header{
   position:sticky;top:0;z-index:20;
   background:var(--ink);
@@ -26,7 +26,7 @@ a{color:inherit;text-decoration:none}
 .bold nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px}
 .mark{width:36px;height:36px;display:grid;place-items:center;background:var(--gold);color:var(--ink);font-weight:800}
-.nav-links{display:flex;flex-wrap:wrap;gap:18px;font-family:Arial,sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase}
+.nav-links{display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-family:Arial,sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase}
 .nav-links a:hover{color:var(--gold)}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
@@ -35,22 +35,35 @@ a{color:inherit;text-decoration:none}
   font-family:Arial,sans-serif;font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
 }
 .btn.ghost{background:transparent;border:2px solid var(--gold);color:var(--gold)}
-.hero-bold{padding:90px 0 50px;border-bottom:4px solid var(--gold)}
+.hero-bold{padding:72px 0 36px}
+.hero-split{display:grid;grid-template-columns:1.4fr .8fr;gap:40px;align-items:end;border-bottom:4px solid var(--gold);padding-bottom:36px}
 .hero-bold .kicker{margin:0 0 12px;color:var(--gold);font-family:Arial,sans-serif;font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
-.hero-bold h1{margin:0;font-size:clamp(48px,9vw,96px);line-height:.9;letter-spacing:-2px}
-.hero-bold p.lead{max-width:640px;margin:22px 0 0;font-size:20px;color:#ddd6c6}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0;border-top:4px solid var(--gold)}
+.hero-bold h1{margin:0;font-size:clamp(52px,10vw,104px);line-height:.86;letter-spacing:-3px}
+.hero-bold p.lead{max-width:560px;margin:22px 0 0;font-size:19px;color:#ddd6c6}
+.rail{
+  border-left:4px solid var(--gold);
+  padding:8px 0 8px 22px;
+  font-family:Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  font-size:12px;
+}
+.rail b{display:block;font-size:42px;letter-spacing:-1px;color:var(--gold);line-height:1;margin-bottom:8px}
+.rail span{display:block;color:#cfc6b4;margin:4px 0}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0;border-top:4px solid var(--gold)}
 .pcard{
   display:flex;flex-direction:column;
   border-right:4px solid var(--gold);border-bottom:4px solid var(--gold);
   background:#111;
-  min-height:520px;
+  min-height:500px;
+  transition:background .2s;
 }
+.pcard:hover{background:#191919}
 .pcard img{width:100%;aspect-ratio:1;object-fit:cover;display:block;filter:contrast(1.08) saturate(.9)}
-.pcard .body{padding:18px 18px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
-.pcard h2{margin:0;font-size:32px}
+.pcard .body{padding:16px 16px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.pcard h2{margin:0;font-size:28px;line-height:1.05}
 .pcard .sku{font-family:Arial,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
-.pcard .meta{margin:0;color:#cfc6b4;font-size:15px}
+.pcard .meta{margin:0;color:#cfc6b4;font-size:14px}
 .stamp{
   align-self:flex-start;
   margin-top:auto;
@@ -72,5 +85,6 @@ a{color:inherit;text-decoration:none}
 .site-foot a:hover{color:var(--gold)}
 @media(max-width:800px){
   .nav-links a:not(.btn){display:none}
-  .pair,.facts{grid-template-columns:1fr}
+  .hero-split,.pair,.facts{grid-template-columns:1fr}
+  .rail{border-left:0;border-top:4px solid var(--gold);padding:18px 0 0}
 }
