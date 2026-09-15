@@ -105,6 +105,8 @@ a{color:inherit;text-decoration:none}
 .site-foot{padding:40px 0;border-top:4px solid var(--gold);font-family:Arial,sans-serif;font-size:13px}
 .site-foot a{margin-right:16px}
 .site-foot a:hover{color:var(--gold)}
+.drive-embed{border:4px solid var(--gold);background:#111;min-height:640px}
+.drive-embed iframe{display:block;width:100%;height:640px;border:0;background:#fff}
 @media(max-width:900px){
   .lesson{grid-template-columns:1fr 1fr}
   .lesson article{border-bottom:1px solid #333}
@@ -114,4 +116,5 @@ a{color:inherit;text-decoration:none}
   .hero-split,.pair,.facts{grid-template-columns:1fr}
   .rail{border-left:0;border-top:4px solid var(--gold);padding:18px 0 0}
   .lesson{grid-template-columns:1fr}
+  .drive-embed iframe{height:480px}
 }
