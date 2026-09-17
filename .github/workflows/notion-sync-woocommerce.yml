@@ -1,0 +1,40 @@
+name: Notion → WooCommerce Sync
+
+# Manual only for now. The daily schedule is deliberately not enabled: the
+# Notion database currently holds duplicate rows for the same product under two
+# SKU schemes (UP8-DS-* and WOO-*), so an unattended sync would list those
+# products twice in the store. Restore the schedule once those are reconciled:
+#
+#   schedule:
+#     - cron: '0 5 * * *'   # Daily at 5 AM UTC
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'List what would be synced without writing to the store'
+        type: boolean
+        default: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # `npm ci` requires a committed package-lock.json, and this repo has none.
+      - run: npm install --no-audit --no-fund
+      - name: Run Sync
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          WC_SITE_URL: ${{ secrets.WC_SITE_URL }}
+          WC_CONSUMER_KEY: ${{ secrets.WC_CONSUMER_KEY }}
+          WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET }}
+        run: |
+          if [ "${{ inputs.dry_run }}" = "false" ]; then
+            npm run sync:woo
+          else
+            npm run sync:woo -- --dry-run
+          fi
