@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Navigation hierarchy wireframes · Unique Perspective 8</title>
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --mute: #6b6b6b;
+      --line: #222;
+      --paper: #f4f1ea;
+      --box: #fff;
+      --gold: #b08d3c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+    }
+    .page { width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding: 48px 0 80px; }
+    h1 { font-family: Georgia, serif; font-weight: 400; font-size: clamp(32px, 5vw, 48px); margin: 0 0 8px; }
+    .lede { color: var(--mute); max-width: 640px; margin: 0 0 40px; }
+    h2 { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin: 48px 0 16px; }
+    .note { font-size: 14px; color: var(--mute); max-width: 720px; margin: 0 0 20px; }
+    .frame {
+      background: var(--box);
+      border: 1px solid var(--line);
+      padding: 16px;
+    }
+    .anno {
+      display: inline-block;
+      margin: 0 8px 8px 0;
+      padding: 2px 8px;
+      border: 1px dashed var(--ink);
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .bar, .card, .col, .logo, .link, .btn, .ghost {
+      border: 1px solid var(--line);
+    }
+    .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 12px; margin-bottom: 12px; }
+    .logo { width: 28px; height: 28px; display: grid; place-items: center; font-family: Georgia, serif; transform: rotate(45deg); }
+    .logo span { transform: rotate(-45deg); font-size: 12px; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: 12px; }
+    .link { padding: 6px 8px; background: #fafafa; }
+    .btn { padding: 6px 12px; border-color: var(--gold); font-weight: 700; font-size: 12px; }
+    .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 12px; min-height: 180px; margin-bottom: 12px; }
+    .hero-copy, .hero-obj { border: 1px dashed var(--line); padding: 16px; }
+    .ghost { display: inline-block; padding: 8px 12px; margin: 6px 6px 0 0; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+    .ghost.gold { background: #f3e6c4; border-color: var(--gold); font-weight: 700; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+    .card { min-height: 110px; padding: 12px; font-size: 13px; }
+    .card strong { display: block; font-family: Georgia, serif; font-size: 18px; font-weight: 400; margin: 6px 0; }
+    .footer { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .col { padding: 12px; font-size: 12px; min-height: 160px; }
+    .col b { display: block; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+    .col span { display: block; margin: 4px 0; color: #333; }
+    .phones { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .phone {
+      width: 280px;
+      margin: 0 auto;
+      border: 2px solid var(--line);
+      border-radius: 28px;
+      padding: 18px 12px 24px;
+      background: #fff;
+      min-height: 420px;
+    }
+    .panel { border: 1px solid var(--line); margin-top: 8px; }
+    .panel div { padding: 8px 10px; border-bottom: 1px solid #ddd; font-size: 13px; }
+    .panel div:last-child { border-bottom: 0; }
+    .tree { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; }
+    .tree .node { border: 1px solid var(--line); padding: 14px 8px; background: #fff; }
+    .tree .root { grid-column: 1 / -1; background: #111; color: #fff; }
+    @media (max-width: 800px) {
+      .hero, .cards, .footer, .phones, .tree { grid-template-columns: 1fr; }
+      .phone { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <p style="font-size:12px;letter-spacing:2px;text-transform:uppercase;"><a href="../index.html">Home</a> · <a href="../guidelines.html">All pages</a></p>
+    <h1>Navigation hierarchy wireframes</h1>
+    <p class="lede">Three views of the same idea: a short header to decide, a mid-page to act, a footer to find. Boxes only — so the structure is visible without the poetry.</p>
+
+    <h2>01 · Intent map</h2>
+    <p class="note">Every link should answer one question. If two links answer the same question, one of them is noise.</p>
+    <div class="tree">
+      <div class="node root">Visitor arrives at uniqueperspective8.com</div>
+      <div class="node"><b>Learn</b><br>Education<br>Journal<br>Standard</div>
+      <div class="node"><b>Trust</b><br>About<br>Ethics<br>Papers</div>
+      <div class="node"><b>Wear / study</b><br>Carry the cut<br>Know the cut</div>
+      <div class="node"><b>Buy</b><br>shop.uniqueperspective8.com</div>
+    </div>
+
+    <h2>02 · Desktop homepage</h2>
+    <p class="note">Level 1 lives in the bar. Level 2 is the gold shop action plus three paths. Level 3 is the four-column map. Shop is outlined so it is not mistaken for another essay link.</p>
+    <div class="frame">
+      <span class="anno">Level 1 · Decide</span>
+      <div class="bar">
+        <div class="logo"><span>8</span></div>
+        <div class="links">
+          <span class="link">Education</span>
+          <span class="link">About</span>
+          <span class="link">Ethics</span>
+          <span class="link">Know the cut</span>
+          <span class="link">Carry the cut</span>
+          <span class="btn">Shop ↗</span>
+        </div>
+      </div>
+      <span class="anno">Level 2 · Act</span>
+      <div class="hero">
+        <div class="hero-copy">
+          Headline<br><em>Earth, held differently.</em>
+          <div>
+            <span class="ghost gold">Shop the collection</span>
+            <span class="ghost">Carry the cut</span>
+            <span class="ghost">Education hub</span>
+          </div>
+        </div>
+        <div class="hero-obj">Mineral study<br>Field study 08</div>
+      </div>
+      <div class="cards">
+        <div class="card">01<br><strong>Carry the cut</strong>Jewelry · wrapped</div>
+        <div class="card">02<br><strong>Know the cut</strong>Specimens · named</div>
+        <div class="card">03<br><strong>The shop</strong>Live store ↗</div>
+      </div>
+      <span class="anno">Level 3 · Find</span>
+      <div class="footer">
+        <div class="col"><b>Collection</b><span>Carry the cut</span><span>Know the cut</span><span>Live shop</span><span>Minerals</span></div>
+        <div class="col"><b>Study</b><span>Education hub</span><span>The standard</span><span>Regional stones</span><span>Guidelines</span><span>Journal</span></div>
+        <div class="col"><b>House</b><span>About</span><span>Ethics</span><span>Services</span><span>FAQ</span><span>Contact</span></div>
+        <div class="col"><b>Papers</b><span>Policies</span><span>Privacy</span><span>Cookies</span><span>Refunds</span><span>Filed</span></div>
+      </div>
+    </div>
+
+    <h2>03 · Mobile header</h2>
+    <p class="note">On a small screen the five text links leave the first glance. Shop stays. “More” holds the rest so the thumb still has a complete map.</p>
+    <div class="phones">
+      <div>
+        <p class="note">Closed — first five seconds</p>
+        <div class="phone">
+          <div class="bar">
+            <div class="logo"><span>8</span></div>
+            <div class="links">
+              <span class="btn">Shop ↗</span>
+              <span class="link">More</span>
+            </div>
+          </div>
+          <div class="hero-copy" style="min-height:160px;margin-top:8px;">
+            Earth, held differently.
+            <div>
+              <span class="ghost gold">Shop the collection</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="note">Open — when the visitor needs the rest</p>
+        <div class="phone">
+          <div class="bar">
+            <div class="logo"><span>8</span></div>
+            <div class="links">
+              <span class="btn">Shop ↗</span>
+              <span class="link">More</span>
+            </div>
+          </div>
+          <div class="panel">
+            <div>Education</div>
+            <div>About</div>
+            <div>Ethics</div>
+            <div>Know the cut</div>
+            <div>Carry the cut</div>
+            <div>Shop</div>
+            <div>Journal</div>
+            <div>FAQ</div>
+            <div>Contact</div>
+            <div>All pages</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
