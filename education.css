@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
+
+:root {
+  --black: #0b1012;
+  --black-soft: #141b1e;
+  --gold: #cfb53b;
+  --gold-light: #d0ad5a;
+  --old-gold: #cfb53b;
+  --silver: #c8ccd0;
+  --gasoline: #71797e;
+  --steel: #a9a9a9;
+  --cream: #f2eadc;
+  --line: rgba(200, 204, 208, 0.24);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--cream);
+  font-family: Figtree, Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
+.wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--gold-light);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+header {
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 10;
+  width: 100%;
+  border-bottom: 1px solid var(--line);
+}
+nav {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.logo {
+  width: 34px; height: 34px;
+  display: grid; place-items: center;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  font-family: Georgia, serif;
+  transform: rotate(45deg);
+}
+.logo span { transform: rotate(-45deg); }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  color: var(--silver);
+  font-size: 14px;
+}
+.nav-links a:hover { color: var(--cream); }
+.shop-button, .primary-button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 18px;
+  border: 1px solid var(--gold);
+  color: var(--cream);
+}
+.primary-button {
+  min-height: 52px;
+  padding: 0 24px;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 0;
+}
+.text-link {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gasoline);
+  color: var(--silver);
+  font-size: 14px;
+}
+.text-link:hover { color: var(--cream); }
+
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+h1 {
+  margin: 0;
+  font-size: clamp(46px, 7vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+h1 em { color: var(--gold-light); font-style: italic; }
+h2 { margin: 0 0 18px; font-size: clamp(28px, 4vw, 42px); letter-spacing: -1px; }
+h3 { margin: 0 0 10px; font-size: 26px; }
+
+.page-hero {
+  padding: 160px 0 64px;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(207, 181, 59, 0.16), transparent 32%),
+    linear-gradient(160deg, var(--black), #1c262a);
+}
+.page-hero p.lead {
+  max-width: 640px;
+  margin: 22px 0 0;
+  color: var(--silver);
+  font-size: 18px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px;
+  margin-top: 32px;
+}
+
+.section { padding: 72px 0; }
+.section.cream { background: var(--cream); color: var(--black); }
+.section.cream .eyebrow { color: #765d1d; }
+.section.cream p, .section.cream li { color: #435057; }
+.muted { color: var(--silver); }
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.pillar {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.pillar:nth-child(2n) { border-right: 0; }
+.pillar:hover { background: var(--black-soft); transform: translateY(-3px); }
+.pillar-number { color: var(--gold-light); font-family: Georgia, serif; font-size: 28px; }
+.pillar p { color: var(--silver); margin: 12px 0 20px; }
+
+.article { max-width: 780px; }
+.article p { color: var(--silver); }
+.article ul, .article ol { color: var(--silver); padding-left: 1.2em; }
+.article li { margin: 8px 0; }
+.article strong { color: var(--cream); }
+
+.table-wrap { overflow-x: auto; margin: 24px 0 36px; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+th, td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+th {
+  color: var(--gold-light);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.cream table th { color: #765d1d; }
+.cream table td { color: #2b3539; border-color: rgba(11, 16, 18, 0.12); }
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 40px;
+}
+.cta-card {
+  flex: 1 1 220px;
+  padding: 22px;
+  border: 1px solid var(--line);
+}
+.cta-card h3 { font-size: 20px; }
+.cta-card p { color: var(--silver); margin: 8px 0 16px; }
+
+.signoff {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--gasoline);
+  font-size: 14px;
+}
+
+.site-footer { padding: 54px 0 30px; }
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  padding-bottom: 48px;
+}
+.footer-note { max-width: 380px; color: var(--silver); }
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 14px 36px;
+  font-size: 14px;
+}
+.footer-links a:hover { color: var(--gold-light); }
+.legal {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--gasoline);
+  font-size: 12px;
+}
+
+@media (max-width: 820px) {
+  .wrap { width: calc(100% - 32px); }
+  .nav-links a:not(.shop-button) { display: none; }
+  .page-hero { padding: 140px 0 48px; }
+  .pillar-grid { grid-template-columns: 1fr; }
+  .pillar { border-right: 0; }
+  .footer-top, .legal { flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
