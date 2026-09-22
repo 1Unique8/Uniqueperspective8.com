@@ -137,6 +137,11 @@ h3 { margin: 0 0 10px; font-size: 26px; }
 .section.cream .eyebrow { color: #765d1d; }
 .section.cream p, .section.cream li { color: #435057; }
 .muted { color: var(--silver); }
+.magnet-lead {
+  max-width: 640px;
+  margin: 0 0 8px;
+  font-size: 18px;
+}
 
 .pillar-grid {
   display: grid;
@@ -200,6 +205,14 @@ th {
 }
 .cta-card h3 { font-size: 20px; }
 .cta-card p { color: var(--silver); margin: 8px 0 16px; }
+.section.cream .cta-card {
+  border-color: rgba(11, 16, 18, 0.14);
+}
+.section.cream .cta-card p { color: #435057; }
+.section.cream .text-link {
+  color: #2b3539;
+  border-bottom-color: #765d1d;
+}
 
 .signoff {
   margin-top: 48px;
