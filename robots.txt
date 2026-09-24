@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /blog/
+Disallow: /blog.html
+Disallow: /uniqueperspective8-theme/
+
+Sitemap: https://uniqueperspective8.com/sitemap.xml
