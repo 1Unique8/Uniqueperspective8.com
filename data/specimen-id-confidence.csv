@@ -1,0 +1,11 @@
+sku,id_confidence,five_tests_logged,public_label,mineral_name_public,notes
+UP8-PEN-001,probable,no,Gneiss,,lithology collector lock 2026-09-14; five-test protocol not logged
+UP8-PEN-002,probable,no,Banded gneiss,,lithology collector lock 2026-09-14; five-test protocol not logged
+UP8-PEN-003,probable,no,Dark-banded gneiss,,working field word hornblende withheld; not Confirmed
+UP8-PEN-004,probable,no,Banded quartzite,,lithology collector lock 2026-09-14; five-test protocol not logged
+UP8-PEN-005,probable,no,Bedded chert,,lithology collector lock 2026-09-14; five-test protocol not logged
+UP8-PEN-006,field-id-only,no,Weathered pitted cobble,,type pending; no mineral name
+UP8-PEN-007,probable,no,Iron-stained gneiss,,lithology collector lock; stain is description not a mineral ID
+UP8-PEN-008,field-id-only,no,Fine grey pebble,,wrap in progress; type pending
+UP8-PEN-009,field-id-only,no,Green field stone,,greenstone is a field word; no mineral name
+UP8-PEN-010,field-id-only,no,Pale green field stone,,greenstone is a field word; no mineral name
