@@ -1,0 +1,6 @@
+SKU,Product Name,Description,Area,Unit,Shelf,Bin,On Hand,WarehouseLocation,Weight,WeightUnit,Category,Tag1,Tag2,Tag3,Active,ShouldTrackInventory,Cost,Barcode
+UP8-WEB-AGATE-PENDANT-001,Wire-Wrapped Agate Pendant — Similkameen,Finished wrap. $58.50 CAD. Stone 6.39 g.,,,,,1,,1.06,Ounce,The Sourced Series,jewelry,agate,similkameen,TRUE,TRUE,58.50,UP8-WEB-AGATE-PENDANT-001
+UP8-WEB-AGATE-SMALL-001,Polished Similkameen Agate — Small,Finished specimen. $18 CAD.,,,,,1,,1.41,Ounce,The Sourced Series,specimen,agate,similkameen,TRUE,TRUE,18,UP8-WEB-AGATE-SMALL-001
+UP8-WEB-CRICUT-001,Cricut Vinyl Starter Bundle — UP8 Curated,Finished kit. $38 CAD.,,,,,1,,8.82,Ounce,Field & Studio Kits,kit,cricut,vinyl,TRUE,TRUE,38,UP8-WEB-CRICUT-001
+UP8-WEB-AUDIT-SNAPSHOT-001,The Perspective Audit™ — Snapshot,Virtual service. $297 CAD. No parcel.,,,,,1,,0,Ounce,The Perspective Audit,audit,snapshot,service,TRUE,FALSE,297,UP8-WEB-AUDIT-SNAPSHOT-001
+UP8-WEB-AUDIT-BUNDLE-001,The Perspective Audit™ — Audit + Roadmap Bundle,Virtual service. $795 CAD. No parcel.,,,,,1,,0,Ounce,The Perspective Audit,audit,bundle,roadmap,TRUE,FALSE,795,UP8-WEB-AUDIT-BUNDLE-001
