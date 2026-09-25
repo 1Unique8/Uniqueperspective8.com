@@ -1,0 +1,3 @@
+Type,SKU,Name,Published,Is featured?,Visibility in catalog,Short description,Description,Tax status,In stock?,Stock,Backorders allowed?,Sold individually?,Allow customer reviews?,Regular price,Categories,Tags,Weight (lbs)
+simple,TEST-PRODUCT-1,Test Product 1,0,0,hidden,Test description from ProductWithInventoryImportSample.csv,Warehouse sample only. Locations B123 (qty 15) and A211 (qty 10). Do not sell on uniqueperspective8.com.,taxable,1,25,0,0,0,10,Widgets,"Fragile,Small",0.81
+simple,TEST-PRODUCT-2,Test Product 2,0,0,hidden,Test description from ProductWithInventoryImportSample.csv,Warehouse sample only. Locations B214 (qty 10) and B321 (qty 20). Do not sell on uniqueperspective8.com.,taxable,1,30,0,0,0,20,Widgets,"Sturdy,Medium",1.63
