@@ -1,59 +1,51 @@
 const { Client } = require('@notionhq/client');
 const fs = require('fs');
+const path = require('path');
 
 const notion = new Client({ auth: process.env.NOTION_TOKEN });
-const databaseId = process.env.NOTION_DATABASE_ID;
+const databaseId =
+  process.env.NOTION_SHOP_CATALOG_ID ||
+  process.env.NOTION_DATABASE_ID ||
+  '0092ca8896974574844e3eaf7b23f3db';
+
+function plainText(prop) {
+  if (!prop) return '';
+  if (prop.type === 'title') return (prop.title || []).map((t) => t.plain_text).join('').trim();
+  if (prop.type === 'rich_text') return (prop.rich_text || []).map((t) => t.plain_text).join('').trim();
+  if (prop.type === 'select') return prop.select?.name || '';
+  if (prop.type === 'number') return prop.number;
+  return '';
+}
 
 async function syncToStatic() {
-  console.log("🔄 Starting Notion → Static Site sync...");
+  if (!process.env.NOTION_TOKEN) {
+    throw new Error('Missing NOTION_TOKEN');
+  }
+
+  console.log('Starting Notion → static catalog list');
 
   const response = await notion.databases.query({
     database_id: databaseId,
-    filter: { property: "Status", select: { equals: "Active" } }
+    filter: { property: 'Live status', select: { equals: 'Live' } },
   });
 
-  let shopCardsHTML = '';
-
-  for (const page of response.results) {
+  const rows = response.results.map((page) => {
     const p = page.properties;
-    
-    const name = p.Name?.title[0]?.plain_text || 'Untitled';
-    const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-    const price = p["Suggested Retail Price"]?.number || 0;
-    const story = p["Product Story / Description"]?.rich_text[0]?.plain_text || '';
-    const stone = p["Stone Type"]?.select?.name || '';
-    const location = p["Location / Region"]?.select?.name || '';
+    return {
+      sku: plainText(p.SKU),
+      name: plainText(p.Product),
+      price: p['Price CAD']?.number ?? null,
+      type: plainText(p['Product type']),
+    };
+  }).filter((row) => row.sku);
 
-    shopCardsHTML += `
-    <!-- ${name} -->
-    <div class="product-card">
-        <img src="images/products/${slug}.jpg" alt="${name}" loading="lazy">
-        <div class="card-body">
-            <h3>${name}</h3>
-            <p class="stone-type">${stone} • ${location}</p>
-            <p class="price">$${price} CAD</p>
-            <span class="ethical-badge">Ethically Sourced in BC</span>
-            <p>${story.substring(0, 160)}...</p>
-            <button class="add-to-cart">Add to Cart</button>
-            <a href="product-detail.html?id=${slug}" class="view-details">View Details →</a>
-        </div>
-    </div>`;
-  }
-
-  // Update shop.html (using markers)
-  let shopContent = fs.readFileSync('../shop.html', 'utf8'); // Adjust path if needed
-  const startMarker = '<!-- PRODUCTS_START -->';
-  const endMarker = '<!-- PRODUCTS_END -->';
-
-  if (shopContent.includes(startMarker)) {
-    const before = shopContent.split(startMarker)[0];
-    const after = shopContent.split(endMarker)[1] || '';
-    shopContent = `${before}${startMarker}\n${shopCardsHTML}\n${endMarker}${after}`;
-    fs.writeFileSync('../shop.html', shopContent);
-    console.log(`✅ Updated shop.html with ${response.results.length} products`);
-  } else {
-    console.log("⚠️  Markers not found in shop.html");
-  }
+  const out = path.join(__dirname, '..', 'data', 'shop-catalog-live.json');
+  fs.mkdirSync(path.dirname(out), { recursive: true });
+  fs.writeFileSync(out, JSON.stringify(rows, null, 2));
+  console.log(`Wrote ${rows.length} live SKUs to ${out}`);
 }
 
-syncToStatic().catch(console.error);
+syncToStatic().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

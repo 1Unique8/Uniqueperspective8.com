@@ -1,0 +1,38 @@
+name: Notion to WooCommerce Sync
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Log changes without writing to Woo'
+        required: true
+        default: 'true'
+        type: boolean
+      allow_create:
+        description: 'Create missing SKUs as drafts (keep false until demo catalog is gone)'
+        required: true
+        default: 'false'
+        type: boolean
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Run SKU upsert (dry-run unless explicitly disabled)
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          NOTION_SHOP_CATALOG_ID: ${{ secrets.NOTION_SHOP_CATALOG_ID }}
+          NOTION_FINISHED_GOODS_ID: ${{ secrets.NOTION_FINISHED_GOODS_ID }}
+          WC_SITE_URL: ${{ secrets.WC_SITE_URL }}
+          WC_CONSUMER_KEY: ${{ secrets.WC_CONSUMER_KEY }}
+          WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+          WC_ALLOW_CREATE: ${{ github.event.inputs.allow_create }}
+        run: npm run sync:woo
