@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="540" viewBox="0 0 720 540"><image width="720" height="540" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA4KCw0LCQ4NDA0QDw4RFiQXFhQUFiwgIRokNC43NjMuMjI6QVNGOj1OPjIySGJJTlZYXV5dOEVmbWVabFNbXVn/2wBDAQ8QEBYTFioXFypZOzI7WVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVn/wAARCAIcAtADASIAAhEBAxEB/8QAGwABAQADAQEBAAAAAAAAAAAAAAECAwQFBgf/xAA4EAACAQMEAgICAgMBAQEAAAABAgMEBREgMRITQVEiYXEGFDKBkRUjQqGxwdFS8P/2Q=="/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="540" viewBox="0 0 720 540" role="img" aria-label="Cream field stone with dark patches">
+  <rect width="720" height="540" fill="#0a0f11"/>
+  <ellipse cx="360" cy="270" rx="240" ry="170" fill="#e4d5b8"/>
+  <ellipse cx="340" cy="250" rx="190" ry="130" fill="#f2eadc"/>
+  <ellipse cx="280" cy="300" rx="70" ry="40" fill="#2a3236"/>
+  <ellipse cx="430" cy="230" rx="50" ry="28" fill="#1a2226"/>
+  <ellipse cx="400" cy="320" rx="36" ry="20" fill="#3a4448"/>
+  <ellipse cx="310" cy="210" rx="80" ry="16" fill="#c4b089" opacity=".7"/>
+</svg>
