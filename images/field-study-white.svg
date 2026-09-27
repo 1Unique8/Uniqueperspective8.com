@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="853" viewBox="0 0 640 853" role="img" aria-label="White field stone with iron stain and two dark inclusions">
+  <rect width="640" height="853" fill="#0a0f11"/>
+  <ellipse cx="320" cy="430" rx="210" ry="270" fill="#e8dcc8"/>
+  <ellipse cx="300" cy="400" rx="170" ry="220" fill="#f3eadc"/>
+  <ellipse cx="250" cy="520" rx="80" ry="50" fill="#b08d3c" opacity=".55"/>
+  <ellipse cx="280" cy="540" rx="60" ry="36" fill="#8a5a28" opacity=".45"/>
+  <circle cx="270" cy="360" r="18" fill="#1a2226"/>
+  <circle cx="360" cy="430" r="14" fill="#141b1e"/>
+  <ellipse cx="380" cy="300" rx="40" ry="18" fill="#d7c4a3" opacity=".8"/>
+</svg>

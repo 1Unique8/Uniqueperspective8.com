@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="720" viewBox="0 0 540 720" role="img" aria-label="Speckled black and white field stone">
+  <rect width="540" height="720" fill="#0a0f11"/>
+  <ellipse cx="270" cy="360" rx="180" ry="240" fill="#2a3236"/>
+  <ellipse cx="255" cy="340" rx="150" ry="200" fill="#3a4448"/>
+  <circle cx="210" cy="280" r="7" fill="#f2eadc"/>
+  <circle cx="300" cy="320" r="5" fill="#e8dcc8"/>
+  <circle cx="240" cy="400" r="6" fill="#d0ad5a"/>
+  <circle cx="330" cy="380" r="4" fill="#f2eadc"/>
+  <circle cx="190" cy="360" r="4" fill="#c8ccd0"/>
+  <circle cx="280" cy="250" r="5" fill="#c8ccd0"/>
+  <circle cx="320" cy="450" r="6" fill="#f2eadc"/>
+  <circle cx="220" cy="470" r="4" fill="#d0ad5a"/>
+  <circle cx="260" cy="300" r="3" fill="#f2eadc"/>
+</svg>
