@@ -14,6 +14,7 @@
     { title: "Minerals", href: "minerals.html", group: "Collection", keys: "minerals stones" },
     { title: "Field & Studio Kits", href: "field-studio-kits.html", group: "Collection", keys: "kits sluice panning highbanker doba dropship mining" },
     { title: "Drop-ship catalog", href: "catalog.html", group: "Collection", keys: "dropship catalog geode quartz blanket wellness" },
+    { title: "Catalog jewelry", href: "jewelry-catalog.html", group: "Collection", keys: "dropship jewelry ring necklace bracelet botanical emerald pearl catalog fashion" },
     { title: "Shop pointer", href: "shop.html", group: "Collection", keys: "shop redirect" },
     { title: "Live shop", href: "https://shop.uniqueperspective8.com/", group: "Shop", keys: "checkout woocommerce products dropship" },
     { title: "Shop all products", href: "https://shop.uniqueperspective8.com/shop/", group: "Shop", keys: "catalog listings candles jewelry" },
