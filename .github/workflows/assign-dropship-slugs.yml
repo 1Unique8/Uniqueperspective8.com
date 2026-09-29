@@ -1,0 +1,32 @@
+name: Assign drop-ship slugs
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Log slug changes without writing to Woo'
+        required: true
+        default: true
+        type: boolean
+
+concurrency:
+  group: woo-slugs
+  cancel-in-progress: true
+
+jobs:
+  slugs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Assign candle and blanket slugs
+        env:
+          WC_SITE_URL: ${{ secrets.WC_SITE_URL }}
+          WC_CONSUMER_KEY: ${{ secrets.WC_CONSUMER_KEY }}
+          WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: node scripts/assign-dropship-slugs.js
