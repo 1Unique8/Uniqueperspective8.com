@@ -1,18 +1,48 @@
 name: Notion to WooCommerce Sync
 
 on:
+  schedule:
+    - cron: '0 15 * * *'
+  push:
+    branches: [main]
+    paths:
+      - data/woo-import-live.csv
+      - scripts/sync-to-woocommerce.js
+      - .github/workflows/notion-sync-woocommerce.yml
   workflow_dispatch:
     inputs:
+      source:
+        description: 'Catalog source'
+        required: true
+        default: csv
+        type: choice
+        options:
+          - csv
+          - notion
       dry_run:
         description: 'Log changes without writing to Woo'
         required: true
-        default: 'true'
+        default: true
         type: boolean
       allow_create:
-        description: 'Create missing SKUs as drafts (keep false until demo catalog is gone)'
+        description: 'Create missing assigned SKUs (keep false until demo catalog is gone)'
         required: true
-        default: 'false'
+        default: false
         type: boolean
+      publish_assigned:
+        description: 'Set assigned SKUs to publish and apply studio slugs'
+        required: true
+        default: false
+        type: boolean
+      assigned_only:
+        description: 'Touch only the five assigned studio SKUs'
+        required: true
+        default: true
+        type: boolean
+
+concurrency:
+  group: woo-sync
+  cancel-in-progress: true
 
 jobs:
   sync:
@@ -24,7 +54,10 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - name: Run SKU upsert (dry-run unless explicitly disabled)
+      - name: Guard scheduled runs
+        if: github.event_name != 'workflow_dispatch'
+        run: echo "Scheduled and path-triggered runs stay dry-run and assigned-only."
+      - name: Run SKU upsert
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
@@ -33,6 +66,9 @@ jobs:
           WC_SITE_URL: ${{ secrets.WC_SITE_URL }}
           WC_CONSUMER_KEY: ${{ secrets.WC_CONSUMER_KEY }}
           WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET }}
-          DRY_RUN: ${{ github.event.inputs.dry_run }}
-          WC_ALLOW_CREATE: ${{ github.event.inputs.allow_create }}
+          SYNC_SOURCE: ${{ github.event.inputs.source || 'csv' }}
+          DRY_RUN: ${{ github.event_name != 'workflow_dispatch' && 'true' || github.event.inputs.dry_run }}
+          WC_ALLOW_CREATE: ${{ github.event_name != 'workflow_dispatch' && 'false' || github.event.inputs.allow_create }}
+          WC_PUBLISH_ASSIGNED: ${{ github.event_name != 'workflow_dispatch' && 'false' || github.event.inputs.publish_assigned }}
+          WC_ASSIGNED_ONLY: ${{ github.event_name != 'workflow_dispatch' && 'true' || github.event.inputs.assigned_only }}
         run: npm run sync:woo
