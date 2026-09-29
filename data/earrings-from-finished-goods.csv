@@ -1,7 +1,10 @@
-sku,slug,name,price_cad,weight_g,kind,vein_ledger
-UP8-LEGACY-EAR-001,larimar-teardrop-earrings,Larimar teardrop earrings — silver wire,28,1.70,stone-pair,no-not-a-rock-id
-UP8-LEGACY-EAR-002,black-glass-bead-earrings,Faceted black glass bead earrings,5,2.57,novelty,no
-UP8-LEGACY-EAR-003,jack-o-lantern-earrings,Enamel jack-o-lantern witch-hat earrings,5,2.60,novelty,no
-UP8-LEGACY-EAR-004,snap-hoop-earrings,Silver-coloured snap hoop earrings,6,2.77,findings,no
-UP8-LEGACY-EAR-005,skeleton-dangle-earrings,Articulated skeleton dangle earrings,10,10.25,novelty,no
-UP8-LEGACY-EAR-007,two-stone-wrap-earrings,Two-stone wrap earrings — pink + blue drops,32,1.83,stone-pair,no-not-a-rock-id
+sku,slug,status,name,price_cad,seo_title
+UP8-LEGACY-EAR-001,larimar-teardrop-earrings,publish,Larimar teardrop earrings,28,Larimar Teardrop Earrings | Unique Perspective 8
+UP8-LEGACY-EAR-002,black-glass-bead-earrings,publish,Faceted black glass bead earrings,5,Black Glass Bead Earrings | Unique Perspective 8
+UP8-LEGACY-EAR-003,jack-o-lantern-earrings,publish,Enamel jack-o-lantern witch-hat earrings,5,Jack-o-Lantern Earrings | Unique Perspective 8
+UP8-LEGACY-EAR-004,snap-hoop-earrings,publish,Silver-coloured snap hoop earrings,6,Snap Hoop Earrings | Unique Perspective 8
+UP8-LEGACY-EAR-005,skeleton-dangle-earrings,publish,Articulated skeleton dangle earrings,10,Skeleton Dangle Earrings | Unique Perspective 8
+UP8-LEGACY-EAR-006,ghost-glass-bead-earrings,draft,Ghost-in-glass bead earrings,,Ghost Glass Bead Earrings | Unique Perspective 8
+UP8-LEGACY-EAR-007,two-stone-wrap-earrings,publish,Two-stone wrap earrings,32,Two-Stone Wrap Earrings | Unique Perspective 8
+UP8-LEGACY-EAR-008,freshwater-pearl-cluster-earrings,draft,Freshwater pearl cluster earrings,,Pearl Cluster Earrings | Unique Perspective 8
+UP8-LEGACY-EAR-009,star-stud-earrings,draft,Star stud earrings,,Star Stud Earrings | Unique Perspective 8
