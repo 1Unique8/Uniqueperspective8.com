@@ -1,0 +1,19 @@
+name: Probe WordPress plugins
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: List Amazon-related plugins
+        env:
+          WC_SITE_URL: ${{ secrets.WC_SITE_URL }}
+          WP_ADMIN: ${{ secrets.WP_ADMIN }}
+          WP_PASSWORD: ${{ secrets.WP_PASSWORD }}
+        run: node scripts/wp-probe-plugins.js
