@@ -1,19 +1,21 @@
 # What uniqueperspective8.com must connect
 
-The house site is the story. The shop is the till.
+Reviewed 30 September 2026. House tells the story. Shop is the till.
 
-Connect means: a visible link on the named HTML page to `https://shop.uniqueperspective8.com/product/{slug}` or to `/shop#{aisle}`.
+Connect means a visible link to `https://shop.uniqueperspective8.com/product/{slug}` (no trailing slash) or `/shop#{aisle}`.
+Next already 301s `/product/:slug/` → `/product/:slug`.
 
-| House file | Must connect | Must not connect |
-| --- | --- | --- |
-| index.html | Pendant, small agate, Live shop, Sourced Series | Decor bookends, helmets, Amazon kits as if they were FMC stones |
-| sourced-series.html | Pendant, small agate only | Home decor, creek kits |
-| wear.html | Pendant + Bench wire SKUs | Estwing, sluices |
-| specimens.html | Small agate + Cabinet cases | Dyed bookends |
-| field-studio-kits.html | Rockhounding aisle + Creek aisle + Rough ground aisle | Studio pendant as a kit |
-| ethics.html | Rockhounding aisle (tools + leave-no-trace). No ASIN as an ethics badge | Home decor, helmet |
-| services-audit.html / contact.html | Two Audit slugs | Kits |
-| catalog.html | Home decor aisle only, labeled catalog / dyed where true | Sourced Series language |
-| downloads/UP8-08-Mineral-Identification-and-Testing.html | Look closer loupes | Creek sluices |
+| House file | Status | Must connect | Must not connect |
+| --- | --- | --- | --- |
+| site-search.js | Wired | Shop aisles by hash | Woo `/shop/jewelry/`, candles, `?s=` |
+| ethics.html | Wired | Field kits page + `/shop#rockhounding` | Shop root, helmet, decor |
+| field-studio-kits.html | Wired | Rockhounding, creek, rough ground | Doba 001–006 as shop listings |
+| wear.html | Wired | Pendant + bench wire | Estwing, sluices |
+| specimens.html | Partial | Small agate; cabinet aisle still to add on page | Dyed bookends |
+| sourced-series.html | Keep | Pendant, small agate only | Home decor, creek kits |
+| index.html | Keep | Pendant, small agate, Live shop | Amazon kits as FMC stones |
+| catalog.html | Open | Home decor aisle, labeled dyed | Sourced Series language |
+| services-audit.html / contact.html | Keep | Two Audit slugs | Kits |
+| downloads/UP8-08-... | Open | Look closer loupes | Creek sluices |
 
-Work still open on the house repo: add those links on field-studio-kits.html, wear.html, specimens.html, ethics.html, catalog.html, and the mineral-ID download. The map above is the ticket list.
+Still open: catalog.html home-decor block, specimens.html cabinet links, mineral-ID download loupes, sourced-series trailing-slash cleanup.
