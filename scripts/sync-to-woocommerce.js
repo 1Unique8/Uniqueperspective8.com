@@ -13,7 +13,6 @@ const CSV_PATH = process.env.WOO_CSV_PATH || path.join(process.cwd(), 'data/woo-
 const ASSIGNED_SLUGS = {
   'UP8-WEB-AGATE-PENDANT-001': 'agate-pendant',
   'UP8-WEB-AGATE-SMALL-001': 'agate-small-specimen',
-  'UP8-WEB-CRICUT-001': 'cricut-kit',
   'UP8-WEB-AUDIT-SNAPSHOT-001': 'perspective-audit-snapshot',
   'UP8-WEB-AUDIT-BUNDLE-001': 'perspective-audit-bundle'
 };
