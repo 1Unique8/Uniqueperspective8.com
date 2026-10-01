@@ -1,4 +1,5 @@
 (function () {
+  var SHOP = "https://shop.uniqueperspective8.com";
   var PAGES = [
     { title: "Home", href: "index.html", group: "House", keys: "home earth atelier field stone" },
     { title: "About", href: "about.html", group: "House", keys: "morgan sugg founder story metal free miner" },
@@ -9,16 +10,23 @@
     { title: "Services", href: "services.html", group: "House", keys: "perspective audit snapshot bundle pricing" },
     { title: "Influencers", href: "influencer-report.html", group: "House", keys: "influencer report" },
     { title: "Filed", href: "filed.html", group: "House", keys: "filed papers archive" },
-    { title: "Carry the cut", href: "wear.html", group: "Collection", keys: "jewelry wear pendant wrap agate" },
+    { title: "Carry the cut", href: "wear.html", group: "Collection", keys: "jewelry wear pendant wrap agate bench wire" },
     { title: "Know the cut", href: "specimens.html", group: "Collection", keys: "specimens cabinet penticton educational" },
     { title: "Minerals", href: "minerals.html", group: "Collection", keys: "minerals stones" },
-    { title: "Field & Studio Kits", href: "field-studio-kits.html", group: "Collection", keys: "kits sluice panning highbanker doba dropship mining" },
-    { title: "Drop-ship catalog", href: "catalog.html", group: "Collection", keys: "dropship catalog geode quartz blanket wellness" },
-    { title: "Catalog jewelry", href: "jewelry-catalog.html", group: "Collection", keys: "dropship jewelry ring necklace bracelet botanical emerald pearl catalog fashion" },
+    { title: "Field & Studio Kits", href: "field-studio-kits.html", group: "Collection", keys: "kits sluice panning rockhounding field mining amazon" },
+    { title: "Drop-ship catalog", href: "catalog.html", group: "Collection", keys: "dropship catalog geode decor bookends" },
+    { title: "Catalog jewelry", href: "jewelry-catalog.html", group: "Collection", keys: "dropship jewelry ring necklace bracelet catalog" },
     { title: "Shop pointer", href: "shop.html", group: "Collection", keys: "shop redirect" },
-    { title: "Live shop", href: "https://shop.uniqueperspective8.com/", group: "Shop", keys: "checkout woocommerce products dropship" },
-    { title: "Shop all products", href: "https://shop.uniqueperspective8.com/shop/", group: "Shop", keys: "catalog listings candles jewelry" },
-    { title: "Shop jewelry aisle", href: "https://shop.uniqueperspective8.com/shop/jewelry/", group: "Shop", keys: "jewelry ring pendant" },
+    { title: "Live shop", href: SHOP + "/shop", group: "Shop", keys: "checkout shop listings" },
+    { title: "Shop — Sourced Series", href: SHOP + "/shop#sourced-series", group: "Shop", keys: "pendant agate similkameen jewelry" },
+    { title: "Shop — Rockhounding", href: SHOP + "/shop#rockhounding", group: "Shop", keys: "rockhounding hammer estwing geology kit" },
+    { title: "Shop — Creek kits", href: SHOP + "/shop#field-studio-kits", group: "Shop", keys: "sluice panning creek" },
+    { title: "Shop — Look closer", href: SHOP + "/shop#look-closer", group: "Shop", keys: "loupe uv identify" },
+    { title: "Shop — Cabinet", href: SHOP + "/shop#cabinet", group: "Shop", keys: "display case gem jar" },
+    { title: "Shop — Bench", href: SHOP + "/shop#bench", group: "Shop", keys: "wrap wire bench" },
+    { title: "Shop — Home decor", href: SHOP + "/shop#home-decor", group: "Shop", keys: "bookends agate decor dyed" },
+    { title: "Shop — Rough ground", href: SHOP + "/shop#extreme-sports", group: "Shop", keys: "helmet poles hiking approach" },
+    { title: "Shop — Audit", href: SHOP + "/shop#services", group: "Shop", keys: "perspective audit snapshot bundle" },
     { title: "Education Hub", href: "education/", group: "Study", keys: "education hub field guides" },
     { title: "BC Free Miner Stewardship Standard", href: "education/bc-free-miner-stewardship.html", group: "Study", keys: "standard tenure syilx provenance card" },
     { title: "Guide 1 Field code", href: "education/free-miner.html", group: "Study", keys: "free miner field code" },
@@ -36,7 +44,7 @@
     { title: "Refunds", href: "refund-policy.html", group: "Papers", keys: "refund returns" }
   ];
 
-  var SHOP_SEARCH = "https://shop.uniqueperspective8.com/?s=";
+  var SHOP_SEARCH = SHOP + "/shop";
 
   function normalize(value) {
     return String(value || "").toLowerCase().replace(/\s+/g, " ").trim();
@@ -62,8 +70,8 @@
       status.textContent = "No pages matched. Try the shop door.";
       var empty = document.createElement("li");
       var link = document.createElement("a");
-      link.href = SHOP_SEARCH + encodeURIComponent(query);
-      link.textContent = "Search the live shop for " + query;
+      link.href = SHOP_SEARCH;
+      link.textContent = "Open the shop";
       empty.appendChild(link);
       list.appendChild(empty);
       return;
@@ -77,12 +85,6 @@
       item.appendChild(link);
       list.appendChild(item);
     });
-    var shopItem = document.createElement("li");
-    var shopLink = document.createElement("a");
-    shopLink.href = SHOP_SEARCH + encodeURIComponent(query);
-    shopLink.innerHTML = "<span>Also search the live shop for " + query + "</span><small>Shop</small>";
-    shopItem.appendChild(shopLink);
-    list.appendChild(shopItem);
   }
 
   var results = document.querySelector("[data-search-results]");
