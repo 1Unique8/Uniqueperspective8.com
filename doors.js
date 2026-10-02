@@ -9,6 +9,7 @@
     '<a href="https://community.uniqueperspective8.com/rock-your-perspective">Field to Shelf</a>',
     '<a href="https://community.uniqueperspective8.com/">Community</a>',
     '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/product/agate-pendant/">Wire-Wrapped Agate Pendant — Similkameen</a>',
+    '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/product/agate-small-specimen/">Polished Similkameen Agate — Small</a>',
     '<a href="https://uniqueperspective8.com/about.html">About</a>',
     '<a href="https://uniqueperspective8.com/ethics.html">Ethics</a>',
     '<a href="https://uniqueperspective8.com/contact.html">Contact</a>',
