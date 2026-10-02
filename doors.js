@@ -8,6 +8,7 @@
     '<a href="https://uniqueperspective8.com/education/">Education</a>',
     '<a href="https://community.uniqueperspective8.com/rock-your-perspective">Field to Shelf</a>',
     '<a href="https://community.uniqueperspective8.com/">Community</a>',
+    '<a href="https://shop.uniqueperspective8.com/">Shop</a>',
     '<a href="https://uniqueperspective8.com/about.html">About</a>',
     '<a href="https://uniqueperspective8.com/ethics.html">Ethics</a>',
     '<a href="https://uniqueperspective8.com/contact.html">Contact</a>',
