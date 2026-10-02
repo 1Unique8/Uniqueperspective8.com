@@ -12,6 +12,7 @@
     '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/product/agate-small-specimen/">Polished Similkameen Agate — Small</a>',
     '<a href="https://uniqueperspective8.com/about.html">About</a>',
     '<a href="https://uniqueperspective8.com/ethics.html">Ethics</a>',
+    '<a href="https://uniqueperspective8.com/products.html">Available</a>',
     '<a href="https://uniqueperspective8.com/contact.html">Contact</a>',
     '<a href="mailto:services@uniqueperspective8.com">services@</a>',
     '<a href="mailto:community@uniqueperspective8.com?cc=services@uniqueperspective8.com">community@</a>'
