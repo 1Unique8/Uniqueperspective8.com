@@ -132,11 +132,46 @@ h3 { margin: 0 0 10px; font-size: 26px; }
   margin-top: 32px;
 }
 
+.shelf-path {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: 40px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.shelf-path li { margin: 0; }
+.shelf-path a {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 92px;
+  padding: 18px 16px;
+  border-right: 1px solid var(--line);
+  color: var(--cream);
+  font-family: Georgia, serif;
+  font-size: 22px;
+}
+.shelf-path li:last-child a { border-right: 0; }
+.shelf-path a span {
+  color: var(--gold-light);
+  font-family: Figtree, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.shelf-path a:hover { background: rgba(207, 181, 59, 0.08); }
+
 .section { padding: 72px 0; }
 .section.cream { background: var(--cream); color: var(--black); }
 .section.cream .eyebrow { color: #765d1d; }
 .section.cream p, .section.cream li { color: #435057; }
+.section.cream .text-link { color: #5c5140; border-bottom-color: rgba(118, 93, 29, 0.45); }
+.section.cream .cta-card { border-color: rgba(11, 16, 18, 0.12); }
 .muted { color: var(--silver); }
+.station-lead { max-width: 640px; margin: 0 0 36px; }
 
 .pillar-grid {
   display: grid;
@@ -145,7 +180,7 @@ h3 { margin: 0 0 10px; font-size: 26px; }
   border-bottom: 1px solid var(--line);
 }
 .pillar {
-  min-height: 280px;
+  min-height: 240px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -191,7 +226,7 @@ th {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-top: 40px;
+  margin-top: 8px;
 }
 .cta-card {
   flex: 1 1 220px;
@@ -200,6 +235,7 @@ th {
 }
 .cta-card h3 { font-size: 20px; }
 .cta-card p { color: var(--silver); margin: 8px 0 16px; }
+.section.cream .cta-card p { color: #435057; }
 
 .signoff {
   margin-top: 48px;
@@ -238,6 +274,8 @@ th {
   .wrap { width: calc(100% - 32px); }
   .nav-links a:not(.shop-button) { display: none; }
   .page-hero { padding: 140px 0 48px; }
+  .shelf-path { grid-template-columns: 1fr 1fr; }
+  .shelf-path a { border-bottom: 1px solid var(--line); }
   .pillar-grid { grid-template-columns: 1fr; }
   .pillar { border-right: 0; }
   .footer-top, .legal { flex-direction: column; }
