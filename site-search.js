@@ -16,7 +16,6 @@
     { title: "Field & Studio Kits", href: "field-studio-kits.html", group: "Collection", keys: "kits sluice panning rockhounding field mining amazon" },
     { title: "Drop-ship catalog", href: "catalog.html", group: "Collection", keys: "dropship catalog geode decor bookends" },
     { title: "Catalog jewelry", href: "jewelry-catalog.html", group: "Collection", keys: "dropship jewelry ring necklace bracelet catalog" },
-    { title: "Shop pointer", href: "shop.html", group: "Collection", keys: "shop redirect" },
     { title: "Live shop", href: SHOP + "/shop", group: "Shop", keys: "checkout shop listings" },
     { title: "Shop — Sourced Series", href: SHOP + "/shop#sourced-series", group: "Shop", keys: "pendant agate similkameen jewelry" },
     { title: "Shop — Rockhounding", href: SHOP + "/shop#rockhounding", group: "Shop", keys: "rockhounding hammer estwing geology kit" },

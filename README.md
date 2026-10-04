@@ -16,7 +16,6 @@ Checkout lives on [shop.uniqueperspective8.com](https://shop.uniqueperspective8.
 - [about.html](about.html) — About
 - [ethics.html](ethics.html) — Ethics & Sustainability
 - [guidelines.html](guidelines.html) — All file links
-- [shop.html](shop.html) — Shop (static pointer)
 - [https://shop.uniqueperspective8.com/](https://shop.uniqueperspective8.com/) — Live shop
 - [catalog.html](catalog.html) — Drop-shipped catalog cards (unlinked until mapped)
 - [blog.html](blog.html) — Blog
