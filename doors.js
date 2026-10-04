@@ -6,6 +6,7 @@
   bar.innerHTML = [
     '<a href="https://uniqueperspective8.com/">House</a>',
     '<a href="https://uniqueperspective8.com/education/">Education</a>',
+    '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/">Shop</a>',
     '<a href="https://community.uniqueperspective8.com/rock-your-perspective">Field to Shelf</a>',
     '<a href="https://community.uniqueperspective8.com/">Community</a>',
     '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/product/agate-pendant/">Wire-Wrapped Agate Pendant — Similkameen</a>',
