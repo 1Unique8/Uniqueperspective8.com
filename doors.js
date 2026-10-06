@@ -15,7 +15,7 @@
     '<a href="https://uniqueperspective8.com/ethics.html">Ethics</a>',
     '<a href="https://uniqueperspective8.com/products.html">Available</a>',
     '<a href="https://uniqueperspective8.com/contact.html">Contact</a>',
-    '<a href="https://shop.uniqueperspective8.com/shop/perspective-audit/perspective-audit-snapshot/">Audit Snapshot</a>
+    '<a href="https://shop.uniqueperspective8.com/shop/perspective-audit/perspective-audit-snapshot/">Audit Snapshot</a>',
     '<a href="https://shop.uniqueperspective8.com/shop/perspective-audit/perspective-audit-bundle/">Audit Bundle</a>',
     '<a href="mailto:services@uniqueperspective8.com">services@</a>',
     '<a href="mailto:community@uniqueperspective8.com?cc=services@uniqueperspective8.com">community@</a>'
