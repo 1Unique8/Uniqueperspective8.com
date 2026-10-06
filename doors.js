@@ -7,14 +7,16 @@
     '<a href="https://uniqueperspective8.com/">House</a>',
     '<a href="https://uniqueperspective8.com/education/">Education</a>',
     '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/">Shop</a>',
-    '<a href="https://community.uniqueperspective8.com/rock-your-perspective">Field to Shelf</a>',
+    '<a href="https://community.uniqueperspective8.com/field-to-shelf.html">Field to Shelf</a>',
     '<a href="https://community.uniqueperspective8.com/">Community</a>',
-    '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/product/agate-pendant/">Wire-Wrapped Agate Pendant — Similkameen</a>',
-    '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/product/agate-small-specimen/">Polished Similkameen Agate — Small</a>',
+    '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/shop/sourced-series/agate-pendant/">Wire-Wrapped Agate Pendant — Similkameen</a>',
+    '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/shop/sourced-series/agate-small-specimen/">Polished Similkameen Agate — Small</a>',
     '<a href="https://uniqueperspective8.com/about.html">About</a>',
     '<a href="https://uniqueperspective8.com/ethics.html">Ethics</a>',
     '<a href="https://uniqueperspective8.com/products.html">Available</a>',
     '<a href="https://uniqueperspective8.com/contact.html">Contact</a>',
+    '<a href="https://shop.uniqueperspective8.com/shop/perspective-audit/perspective-audit-snapshot/">Audit Snapshot</a>
+    '<a href="https://shop.uniqueperspective8.com/shop/perspective-audit/perspective-audit-bundle/">Audit Bundle</a>',
     '<a href="mailto:services@uniqueperspective8.com">services@</a>',
     '<a href="mailto:community@uniqueperspective8.com?cc=services@uniqueperspective8.com">community@</a>'
   ].join("");
