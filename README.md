@@ -11,7 +11,7 @@ Checkout lives on [shop.uniqueperspective8.com](https://shop.uniqueperspective8.
 ## Pages
 
 - [index.html](index.html) — Home
-- [education/](education/) — Field & Mineral Education Hub (canonical slug `/education`)
+- [Education](https://community.uniqueperspective8.com/education/) — Field & Mineral Education Hub (canonical slug `/education`)
 - [knowledge/](knowledge/) — Alias that redirects to `/education`
 - [about.html](about.html) — About
 - [ethics.html](ethics.html) — Ethics & Sustainability
@@ -30,7 +30,7 @@ Checkout lives on [shop.uniqueperspective8.com](https://shop.uniqueperspective8.
 
 ## Education Hub
 
-Canonical public URL: `https://uniqueperspective8.com/education/`
+Canonical public URL: `https://community.uniqueperspective8.com/education/` (for now)
 
 WordPress (when the theme in `uniqueperspective8-theme/` is active):
 

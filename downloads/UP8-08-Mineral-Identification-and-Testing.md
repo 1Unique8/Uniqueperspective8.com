@@ -80,4 +80,4 @@ Metallic luster, high density, perfect cubic cleavage into 90-degree steps.
 3. Softness gradients: uneven polishing in multi-mineral stones.
 4. Surface rind: how much weathered exterior must be removed to reach the heart.
 
-Live pages: [Field identification](/education/identification.html) · [Regional stones](/education/regional-minerals.html) · [Gold vs pyrite](/education/gossan-vein.html)
+Live pages: [Field identification](https://community.uniqueperspective8.com/education/) · [Regional stones](https://community.uniqueperspective8.com/education/) · [Gold vs pyrite](https://community.uniqueperspective8.com/education/)
