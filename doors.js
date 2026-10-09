@@ -5,8 +5,9 @@
   bar.setAttribute("aria-label", "House doors");
   bar.innerHTML = [
     '<a href="https://uniqueperspective8.com/">House</a>',
-    '<a href="https://community.uniqueperspective8.com/">Education</a>',
+    '<a href="https://community.uniqueperspective8.com/education/">Education</a>',
     '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/">Shop</a>',
+    '<a href="https://community.uniqueperspective8.com/field-to-shelf/">Field to Shelf</a>',
     '<a href="https://community.uniqueperspective8.com/">Community</a>',
     '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/shop/sourced-series/agate-pendant/">Wire-Wrapped Agate Pendant — Similkameen</a>',
     '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/shop/sourced-series/agate-small-specimen/">Polished Similkameen Agate — Small</a>',
