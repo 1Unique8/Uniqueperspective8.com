@@ -21,8 +21,7 @@
     '<a href="https://uniqueperspective8.com/contact.html">Contact</a>',
     '<a href="https://shop.uniqueperspective8.com/shop/perspective-audit/perspective-audit-snapshot/">Audit Snapshot</a>',
     '<a href="https://shop.uniqueperspective8.com/shop/perspective-audit/perspective-audit-bundle/">Audit Bundle</a>',
-    '<a href="mailto:services@uniqueperspective8.com">services@</a>',
-    '<a href="mailto:community@uniqueperspective8.com?cc=services@uniqueperspective8.com">community@</a>'
+    '<a href="mailto:customer_service@uniqueperspective8.com">customer_service@</a>'
   ].join("");
   var style = document.createElement("style");
   style.textContent = "#up8-doors{position:sticky;top:0;z-index:50;display:flex;flex-wrap:wrap;gap:14px 18px;align-items:center;padding:10px 16px;background:#0b1012;color:#f2eadc;font:13px/1.3 Figtree,Arial,sans-serif}#up8-doors a{color:#d0ad5a;text-decoration:none}#up8-doors a:hover{color:#f2eadc}#up8-doors a.up8-shop-button{background:#d0ad5a;color:#0b1012;border-radius:6px;padding:6px 12px;font-weight:600}";
