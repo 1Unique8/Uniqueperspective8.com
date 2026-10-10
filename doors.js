@@ -1,5 +1,7 @@
 (function () {
   if (document.getElementById("up8-doors")) return;
+  // The home page carries its own four-door dropdown index.
+  if (document.querySelector("[data-up8-nav]")) return;
   var bar = document.createElement("nav");
   bar.id = "up8-doors";
   bar.setAttribute("aria-label", "House doors");
