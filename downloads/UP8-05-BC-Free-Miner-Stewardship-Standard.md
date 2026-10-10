@@ -51,7 +51,7 @@ A physical provenance card carries:
 - FMC registration number when applicable
 - Artisan signature
 
-Studio mounting: 925 dead-soft recycled sterling silver. No synthetic resins or artificial coatings. Drop-shipped goods are labeled and sit outside these claims.
+Studio work: recycled copper or recycled 925 sterling wire, depending on the piece. No synthetic resins or artificial coatings. Drop-shipped goods are labeled and sit outside these claims.
 
 ## Website homes
 education/bc-free-miner-stewardship.html, education/free-miner.html, education/provenance.html, ethics.html
