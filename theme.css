@@ -93,6 +93,20 @@ a{color:inherit;text-decoration:none}
   background:#8b1e12;color:var(--paper);
   font-family:Arial,sans-serif;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
 }
+.id-tag{
+  display:inline-block;
+  margin:10px 0 0;
+  padding:5px 9px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  font-family:Arial,sans-serif;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+}
+.id-tag[data-id-confidence="confirmed"]{background:var(--gold);color:var(--ink)}
+.id-tag[data-id-confidence="field-id-only"]{border-color:#6b6458;color:#cfc6b4}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:0;border:4px solid var(--gold)}
 .pair img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
 .facts{display:grid;grid-template-columns:180px 1fr;gap:0;border:4px solid var(--gold);border-top:0}
