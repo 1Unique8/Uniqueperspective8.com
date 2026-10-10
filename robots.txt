@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /uniqueperspective8-theme/
+
+Sitemap: https://uniqueperspective8.com/sitemap.xml
