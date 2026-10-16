@@ -4,7 +4,7 @@
 
 *Dug by Hand. Crafted by Heart. | Fall 7, Stand 8.*
 
-Public home: education/bc-free-miner-stewardship.html
+Public home: https://uniqueperspective8.com/ethical-sourcing/bc-free-miner-stewardship-standard/
 
 ## Purpose
 This paper is the long form of how Unique Perspective 8 collects, verifies, and documents stone. It is not a mine permit, not a claim, and not an assay certificate.
@@ -54,4 +54,7 @@ A physical provenance card carries:
 Studio work: recycled copper or recycled 925 sterling wire, depending on the piece. No synthetic resins or artificial coatings. Drop-shipped goods are labeled and sit outside these claims.
 
 ## Website homes
-education/bc-free-miner-stewardship.html, education/free-miner.html, education/provenance.html, ethics.html
+- https://uniqueperspective8.com/ethical-sourcing/bc-free-miner-stewardship-standard/
+- https://uniqueperspective8.com/ethical-sourcing/
+- https://uniqueperspective8.com/provenance.html
+- https://uniqueperspective8.com/ethics.html
