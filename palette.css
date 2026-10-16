@@ -1,0 +1,16 @@
+/* UP8 shared palette — same values on House, Shop, Services, Community.
+   WCAG AA (4.5:1 small text) checked against --up8-bg and --up8-card.
+   --up8-muted (#71797E) is 4.39:1 on bg and 3.08:1 on cards, so it is used
+   only for dividers, borders and large text. Small secondary text uses
+   --up8-muted-text (#A3AAAE: 8.26:1 on bg, 5.80:1 on cards). */
+:root{
+  --up8-bg:#0B0D10;
+  --up8-card:#2A2E33;
+  --up8-gold:#CFB53B;
+  --up8-gold-hover:#A8922E;
+  --up8-muted:#71797E;
+  --up8-muted-text:#A3AAAE;
+  --up8-text:#FFFFFF;
+  --up8-on-gold:#0B0D10;
+  --up8-line:rgba(113,121,126,.45);
+}

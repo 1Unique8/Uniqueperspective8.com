@@ -1,5 +1,5 @@
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.site-search{display:flex;align-items:center;gap:0;flex:1;max-width:360px;min-width:180px;border:1px solid var(--line);background:rgba(10,11,10,.62)}
+.site-search{display:flex;align-items:center;gap:0;flex:1;max-width:360px;min-width:180px;border:1px solid var(--line);background:rgba(11,13,16,.62)}
 .site-search input{flex:1;min-width:0;min-height:44px;padding:0 14px;border:0;background:transparent;color:var(--silver);font:inherit}
 .site-search input::placeholder{color:var(--steel)}
 .site-search button{min-height:44px;padding:0 14px;border:0;border-left:1px solid var(--line);background:transparent;color:var(--gold-light);font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
@@ -17,7 +17,7 @@
 .shop-strip{padding:90px 0;background:var(--black-soft)}
 .shop-doors{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
 .shop-doors a{display:flex;flex-direction:column;gap:10px;min-height:160px;padding:24px;background:var(--black)}
-.shop-doors a:hover{background:#1a1c1a}
+.shop-doors a:hover{background:var(--up8-card)}
 .shop-doors strong{font-family:Georgia,serif;font-size:22px;font-weight:400;color:var(--silver)}
 .shop-doors span{color:var(--steel);font-size:14px}
 .page-map{padding:90px 0 110px;background:var(--silver);color:var(--black)}
