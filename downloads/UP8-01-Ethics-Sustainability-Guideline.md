@@ -10,7 +10,7 @@ Handmade sterling and gold pieces are formed in the studio. They may contain bot
 This guideline tells anyone working the bench, the shop listings, or the website which claims Unique Perspective 8 will stand behind. It is the written form of ethics.html.
 
 ## Copper
-- Recycled copper wire is used on Morgan's handmade studio work only.
+- Recycled copper or recycled 925 sterling wire, depending on the piece, is used on UP8's handmade studio work only.
 - Do not print this claim on drop-shipped or other catalog items.
 
 ## Gold and silver
@@ -23,7 +23,7 @@ This guideline tells anyone working the bench, the shop listings, or the website
 - If a listing does not say it is handmade in this studio, do not attach this guideline to it.
 
 ## Free Miner Certificate
-Morgan holds a Free Miner Certificate in British Columbia. That certificate is standing to seek mineral and placer rights and to do limited exploration. It is not a mine permit, not a claim, and not proof that every object in the shop came from the field.
+UP8's founder holds a Free Miner Certificate in British Columbia. That certificate is standing to seek mineral and placer rights and to do limited exploration. It is not a mine permit, not a claim, and not proof that every object in the shop came from the field.
 
 ## Separate-batch rule
 1. A melt is kept separate only if purchased stock did not enter that pot.

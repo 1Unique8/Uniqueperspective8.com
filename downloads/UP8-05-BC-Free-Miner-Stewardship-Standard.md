@@ -19,7 +19,7 @@ Governed by the BC Mineral Tenure Act.
 - Free Miner Certificate (FMC): standing required for small-scale commercial collecting and lawful prospecting. Not a mine permit.
 - Method: hand tools only — hammers, chisels, pans. Zero motorized disturbance.
 
-Morgan holds an FMC. That number belongs on a provenance card when the extraction was done under that standing. It does not travel onto every shop object.
+UP8's founder holds an FMC. That number belongs on a provenance card when the extraction was done under that standing. It does not travel onto every shop object.
 
 ## Mineral Titles Online (MTO)
 Before fieldwork:
