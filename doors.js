@@ -17,7 +17,7 @@
     '<a href="https://uniqueperspective8.com/story.html">Our Story</a>',
     '<a href="https://uniqueperspective8.com/provenance.html">Provenance</a>',
     '<a href="https://uniqueperspective8.com/gallery.html">Gallery</a>',
-    '<a href="https://uniqueperspective8.com/press.html">Press & Partners</a>',
+    '<a href="https://uniqueperspective8.com/press.html">Press &amp; Partners</a>',
     '<a href="https://uniqueperspective8.com/ethics.html">Ethics</a>',
     '<a href="https://uniqueperspective8.com/products.html">Available</a>',
     '<a href="https://uniqueperspective8.com/contact.html">Contact</a>',
