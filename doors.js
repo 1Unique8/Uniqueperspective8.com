@@ -17,7 +17,7 @@
     '<a href="https://uniqueperspective8.com/story.html">Our Story</a>',
     '<a href="https://uniqueperspective8.com/provenance.html">Provenance</a>',
     '<a href="https://uniqueperspective8.com/gallery.html">Gallery</a>',
-    '<a href="https://uniqueperspective8.com/press.html">Press &amp; Partners</a>',
+    '<a href="https://uniqueperspective8.com/press.html">Press & Partners</a>',
     '<a href="https://uniqueperspective8.com/ethics.html">Ethics</a>',
     '<a href="https://uniqueperspective8.com/products.html">Available</a>',
     '<a href="https://uniqueperspective8.com/contact.html">Contact</a>',
@@ -26,7 +26,7 @@
     '<a href="mailto:customer_service@uniqueperspective8.com">customer_service@</a>'
   ].join("");
   var style = document.createElement("style");
-  style.textContent = "#up8-doors{position:sticky;top:0;z-index:50;display:flex;flex-wrap:wrap;gap:14px 18px;align-items:center;padding:10px 16px;background:#0b1012;color:#f2eadc;font:13px/1.3 Figtree,Arial,sans-serif}#up8-doors a{color:#d0ad5a;text-decoration:none}#up8-doors a:hover{color:#f2eadc}#up8-doors a.up8-shop-button{background:#d0ad5a;color:#0b1012;border-radius:6px;padding:6px 12px;font-weight:600}";
+  style.textContent = "#up8-doors{position:sticky;top:0;z-index:50;display:flex;flex-wrap:wrap;gap:14px 18px;align-items:center;padding:10px 16px;background:#0B0D10;color:#FFFFFF;font:13px/1.3 Figtree,Arial,sans-serif}#up8-doors a{color:#CFB53B;text-decoration:none}#up8-doors a:hover{color:#FFFFFF}#up8-doors a.up8-shop-button{background:#CFB53B;color:#0B0D10;border-radius:6px;padding:6px 12px;font-weight:600}#up8-doors a.up8-shop-button:hover{background:#A8922E;color:#0B0D10}";
   document.head.appendChild(style);
   document.body.insertBefore(bar, document.body.firstChild);
 })();
