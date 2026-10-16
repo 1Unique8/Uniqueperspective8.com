@@ -1,17 +1,16 @@
-@import url("palette.css");
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
 
 :root {
-  --black: var(--up8-bg);
-  --black-soft: var(--up8-card);
-  --gold: var(--up8-gold);
-  --gold-light: var(--up8-gold);
-  --old-gold: var(--up8-gold);
-  --silver: var(--up8-text);
-  --gasoline: var(--up8-muted);
-  --steel: var(--up8-muted-text);
-  --cream: var(--up8-text);
-  --line: var(--up8-line);
+  --black: #0B0D10;
+  --black-soft: #131619;
+  --gold: #CFB53B;
+  --gold-light: #E4CB6F;
+  --old-gold: #CFB53B;
+  --silver: #FFFFFF;
+  --gasoline: #71797E;
+  --steel: #71797E;
+  --cream: #FFFFFF;
+  --line: rgba(113, 121, 126, 0.35);
 }
 
 * { box-sizing: border-box; }
@@ -117,7 +116,7 @@ h3 { margin: 0 0 10px; font-size: 26px; }
   padding: 160px 0 64px;
   background:
     radial-gradient(circle at 80% 20%, rgba(207, 181, 59, 0.16), transparent 32%),
-    linear-gradient(160deg, var(--black), var(--up8-card));
+    linear-gradient(160deg, var(--black), #131619);
 }
 .page-hero p.lead {
   max-width: 640px;
@@ -133,46 +132,11 @@ h3 { margin: 0 0 10px; font-size: 26px; }
   margin-top: 32px;
 }
 
-.shelf-path {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  margin: 40px 0 0;
-  padding: 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.shelf-path li { margin: 0; }
-.shelf-path a {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-height: 92px;
-  padding: 18px 16px;
-  border-right: 1px solid var(--line);
-  color: var(--cream);
-  font-family: Georgia, serif;
-  font-size: 22px;
-}
-.shelf-path li:last-child a { border-right: 0; }
-.shelf-path a span {
-  color: var(--gold-light);
-  font-family: Figtree, Arial, sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-.shelf-path a:hover { background: rgba(207, 181, 59, 0.08); }
-
 .section { padding: 72px 0; }
-.section.cream { background: var(--up8-card); color: var(--up8-text); }
-.section.cream .eyebrow { color: var(--up8-gold); }
-.section.cream p, .section.cream li { color: var(--up8-text); }
-.section.cream .text-link { color: var(--up8-gold); border-bottom-color: var(--up8-muted); }
-.section.cream .cta-card { border-color: var(--up8-line); }
+.section.cream { background: var(--cream); color: var(--black); }
+.section.cream .eyebrow { color: #8A741F; }
+.section.cream p, .section.cream li { color: #0B0D10; }
 .muted { color: var(--silver); }
-.station-lead { max-width: 640px; margin: 0 0 36px; }
 
 .pillar-grid {
   display: grid;
@@ -181,7 +145,7 @@ h3 { margin: 0 0 10px; font-size: 26px; }
   border-bottom: 1px solid var(--line);
 }
 .pillar {
-  min-height: 240px;
+  min-height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -220,14 +184,14 @@ th {
   text-transform: uppercase;
   font-weight: 700;
 }
-.cream table th { color: var(--up8-gold); }
-.cream table td { color: var(--up8-text); border-color: var(--up8-line); }
+.cream table th { color: #8A741F; }
+.cream table td { color: #0B0D10; border-color: rgba(11, 13, 16, 0.12); }
 
 .cta-row {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-top: 8px;
+  margin-top: 40px;
 }
 .cta-card {
   flex: 1 1 220px;
@@ -236,13 +200,12 @@ th {
 }
 .cta-card h3 { font-size: 20px; }
 .cta-card p { color: var(--silver); margin: 8px 0 16px; }
-.section.cream .cta-card p { color: var(--up8-text); }
 
 .signoff {
   margin-top: 48px;
   padding-top: 24px;
   border-top: 1px solid var(--line);
-  color: var(--up8-muted-text);
+  color: var(--gasoline);
   font-size: 14px;
 }
 
@@ -267,7 +230,7 @@ th {
   gap: 24px;
   padding-top: 24px;
   border-top: 1px solid var(--line);
-  color: var(--up8-muted-text);
+  color: var(--gasoline);
   font-size: 12px;
 }
 
@@ -275,8 +238,6 @@ th {
   .wrap { width: calc(100% - 32px); }
   .nav-links a:not(.shop-button) { display: none; }
   .page-hero { padding: 140px 0 48px; }
-  .shelf-path { grid-template-columns: 1fr 1fr; }
-  .shelf-path a { border-bottom: 1px solid var(--line); }
   .pillar-grid { grid-template-columns: 1fr; }
   .pillar { border-right: 0; }
   .footer-top, .legal { flex-direction: column; }
