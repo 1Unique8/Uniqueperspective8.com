@@ -11,8 +11,10 @@
     '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/">Shop</a>',
     '<a href="https://community.uniqueperspective8.com/field-to-shelf/">Field to Shelf</a>',
     '<a href="https://community.uniqueperspective8.com/">Community</a>',
-    '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/">Wire-Wrapped Agate Pendant — Similkameen</a>',
-    '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/">Polished Similkameen Agate — Small</a>',
+    // Hidden until the product is published with photos:
+    // '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/">Wire-Wrapped Agate Pendant — Similkameen</a>',
+    // Hidden until the product is published with photos:
+    // '<a class="up8-shop-button" href="https://shop.uniqueperspective8.com/">Polished Similkameen Agate — Small</a>',
     '<a href="https://uniqueperspective8.com/about.html">About</a>',
     '<a href="https://uniqueperspective8.com/story.html">Our Story</a>',
     '<a href="https://uniqueperspective8.com/provenance.html">Provenance</a>',
