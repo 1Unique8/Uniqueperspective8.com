@@ -125,6 +125,8 @@
       cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s;
     }
+    /* Cards flagged data-photo="no" are kept in source but not shown until a real photo is added. */
+    .specimen-card[data-photo="no"] { display: none !important; }
     .specimen-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 20px rgba(0,0,0,0.12);
@@ -231,10 +233,11 @@
     </div>
     
     <div class="stats-bar">
-      <div class="stat-card"><div class="stat-num">26</div><div class="stat-label">Specimens</div></div>
-      <div class="stat-card"><div class="stat-num">4</div><div class="stat-label">Categories</div></div>
-      <div class="stat-card"><div class="stat-num">5</div><div class="stat-label">Locations</div></div>
-      <div class="stat-card"><div class="stat-num">1.95kg</div><div class="stat-label">Total Weight</div></div>
+      <!-- Stats count only cards shown (data-photo="yes"); full catalogue: 26 specimens, 4 categories, 5 locations, 1.95kg. -->
+      <div class="stat-card"><div class="stat-num" id="stat-specimens">1</div><div class="stat-label">Specimens</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-categories">1</div><div class="stat-label">Categories</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-locations">1</div><div class="stat-label">Locations</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-weight">615g</div><div class="stat-label">Total Weight</div></div>
     </div>
     
     <div class="filters">
@@ -255,7 +258,7 @@
     
     <div class="specimen-grid" id="grid">
       
-    <div class="specimen-card" data-category="Sulfides" data-sheet="Pyrite" data-id="UPPGPYRITE01" data-name="Pyrite" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="yes" data-category="Sulfides" data-sheet="Pyrite" data-id="UPPGPYRITE01" data-name="Pyrite" onclick="showDetail(this)">
       <img src="data:image/jpeg;base64,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" alt="Pyrite" class="card-img">
       <div class="card-body">
         <div class="card-badge" style="background:#2B2D52;color:#C7D2FE">⚫ Sulfides</div>
@@ -271,7 +274,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Silicates" data-sheet="Similkameen — Tulameen" data-id="UPJGJ01" data-name="Jasper" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Silicates" data-sheet="Similkameen — Tulameen" data-id="UPJGJ01" data-name="Jasper" onclick="showDetail(this)">
       <div class="card-img-placeholder">🔶</div>
       <div class="card-body">
         <div class="card-badge" style="background:#4A2E1C;color:#FED7AA">🔶 Silicates</div>
@@ -287,7 +290,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO01" data-name="Iron Oxide" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO01" data-name="Iron Oxide" onclick="showDetail(this)">
       <div class="card-img-placeholder">🧲</div>
       <div class="card-body">
         <div class="card-badge" style="background:#4A2326;color:#FECACA">🧲 Iron Minerals</div>
@@ -303,7 +306,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO02" data-name="Iron Oxide" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO02" data-name="Iron Oxide" onclick="showDetail(this)">
       <div class="card-img-placeholder">🧲</div>
       <div class="card-body">
         <div class="card-badge" style="background:#4A2326;color:#FECACA">🧲 Iron Minerals</div>
@@ -319,7 +322,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO03" data-name="Iron Oxide" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO03" data-name="Iron Oxide" onclick="showDetail(this)">
       <div class="card-img-placeholder">🧲</div>
       <div class="card-body">
         <div class="card-badge" style="background:#4A2326;color:#FECACA">🧲 Iron Minerals</div>
@@ -335,7 +338,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO04" data-name="Iron Oxide" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO04" data-name="Iron Oxide" onclick="showDetail(this)">
       <div class="card-img-placeholder">🧲</div>
       <div class="card-body">
         <div class="card-badge" style="background:#4A2326;color:#FECACA">🧲 Iron Minerals</div>
@@ -351,7 +354,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO05" data-name="Iron Oxide" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO05" data-name="Iron Oxide" onclick="showDetail(this)">
       <div class="card-img-placeholder">🧲</div>
       <div class="card-body">
         <div class="card-badge" style="background:#4A2326;color:#FECACA">🧲 Iron Minerals</div>
@@ -367,7 +370,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO06" data-name="Iron Oxide" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO06" data-name="Iron Oxide" onclick="showDetail(this)">
       <div class="card-img-placeholder">🧲</div>
       <div class="card-body">
         <div class="card-badge" style="background:#4A2326;color:#FECACA">🧲 Iron Minerals</div>
@@ -383,7 +386,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO07" data-name="Iron Oxide" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO07" data-name="Iron Oxide" onclick="showDetail(this)">
       <div class="card-img-placeholder">🧲</div>
       <div class="card-body">
         <div class="card-badge" style="background:#4A2326;color:#FECACA">🧲 Iron Minerals</div>
@@ -399,7 +402,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO08" data-name="Iron Oxide" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO08" data-name="Iron Oxide" onclick="showDetail(this)">
       <div class="card-img-placeholder">🧲</div>
       <div class="card-body">
         <div class="card-badge" style="background:#4A2326;color:#FECACA">🧲 Iron Minerals</div>
@@ -415,7 +418,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO09" data-name="Iron Oxide" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO09" data-name="Iron Oxide" onclick="showDetail(this)">
       <div class="card-img-placeholder">🧲</div>
       <div class="card-body">
         <div class="card-badge" style="background:#4A2326;color:#FECACA">🧲 Iron Minerals</div>
@@ -431,7 +434,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO10" data-name="Iron Oxide" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO10" data-name="Iron Oxide" onclick="showDetail(this)">
       <div class="card-img-placeholder">🧲</div>
       <div class="card-body">
         <div class="card-badge" style="background:#4A2326;color:#FECACA">🧲 Iron Minerals</div>
@@ -447,7 +450,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO11" data-name="Iron Oxide" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO11" data-name="Iron Oxide" onclick="showDetail(this)">
       <div class="card-img-placeholder">🧲</div>
       <div class="card-body">
         <div class="card-badge" style="background:#4A2326;color:#FECACA">🧲 Iron Minerals</div>
@@ -463,7 +466,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO12" data-name="Iron Oxide" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO12" data-name="Iron Oxide" onclick="showDetail(this)">
       <div class="card-img-placeholder">🧲</div>
       <div class="card-body">
         <div class="card-badge" style="background:#4A2326;color:#FECACA">🧲 Iron Minerals</div>
@@ -479,7 +482,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO13" data-name="Iron Oxide" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Iron Minerals" data-sheet="Oliver Iron & Oxides" data-id="UPOIO13" data-name="Iron Oxide" onclick="showDetail(this)">
       <div class="card-img-placeholder">🧲</div>
       <div class="card-body">
         <div class="card-badge" style="background:#4A2326;color:#FECACA">🧲 Iron Minerals</div>
@@ -495,7 +498,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL01" data-name="Unidentified" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL01" data-name="Unidentified" onclick="showDetail(this)">
       <div class="card-img-placeholder">🪨</div>
       <div class="card-body">
         <div class="card-badge" style="background:#3A3F45;color:#E5E7EB">🪨 Unclassified</div>
@@ -511,7 +514,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL02" data-name="Unidentified" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL02" data-name="Unidentified" onclick="showDetail(this)">
       <div class="card-img-placeholder">🪨</div>
       <div class="card-body">
         <div class="card-badge" style="background:#3A3F45;color:#E5E7EB">🪨 Unclassified</div>
@@ -527,7 +530,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL03" data-name="Unidentified" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL03" data-name="Unidentified" onclick="showDetail(this)">
       <div class="card-img-placeholder">🪨</div>
       <div class="card-body">
         <div class="card-badge" style="background:#3A3F45;color:#E5E7EB">🪨 Unclassified</div>
@@ -543,7 +546,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL04" data-name="Unidentified" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL04" data-name="Unidentified" onclick="showDetail(this)">
       <div class="card-img-placeholder">🪨</div>
       <div class="card-body">
         <div class="card-badge" style="background:#3A3F45;color:#E5E7EB">🪨 Unclassified</div>
@@ -559,7 +562,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL05" data-name="Unidentified" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL05" data-name="Unidentified" onclick="showDetail(this)">
       <div class="card-img-placeholder">🪨</div>
       <div class="card-body">
         <div class="card-badge" style="background:#3A3F45;color:#E5E7EB">🪨 Unclassified</div>
@@ -575,7 +578,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL06" data-name="Unidentified" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL06" data-name="Unidentified" onclick="showDetail(this)">
       <div class="card-img-placeholder">🪨</div>
       <div class="card-body">
         <div class="card-badge" style="background:#3A3F45;color:#E5E7EB">🪨 Unclassified</div>
@@ -591,7 +594,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL07" data-name="Unidentified" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL07" data-name="Unidentified" onclick="showDetail(this)">
       <div class="card-img-placeholder">🪨</div>
       <div class="card-body">
         <div class="card-badge" style="background:#3A3F45;color:#E5E7EB">🪨 Unclassified</div>
@@ -607,7 +610,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL08" data-name="Unidentified" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL08" data-name="Unidentified" onclick="showDetail(this)">
       <div class="card-img-placeholder">🪨</div>
       <div class="card-body">
         <div class="card-badge" style="background:#3A3F45;color:#E5E7EB">🪨 Unclassified</div>
@@ -623,7 +626,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL09" data-name="Unidentified" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL09" data-name="Unidentified" onclick="showDetail(this)">
       <div class="card-img-placeholder">🪨</div>
       <div class="card-body">
         <div class="card-badge" style="background:#3A3F45;color:#E5E7EB">🪨 Unclassified</div>
@@ -639,7 +642,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL10" data-name="Unidentified" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Unclassified" data-sheet="Yellow Lake" data-id="UPYL10" data-name="Unidentified" onclick="showDetail(this)">
       <div class="card-img-placeholder">🪨</div>
       <div class="card-body">
         <div class="card-badge" style="background:#3A3F45;color:#E5E7EB">🪨 Unclassified</div>
@@ -655,7 +658,7 @@
       </div>
     </div>
 
-    <div class="specimen-card" data-category="Unclassified" data-sheet="Oliver (start)" data-id="UPOLIV01" data-name="Unidentified" onclick="showDetail(this)">
+    <div class="specimen-card" data-photo="no" data-category="Unclassified" data-sheet="Oliver (start)" data-id="UPOLIV01" data-name="Unidentified" onclick="showDetail(this)">
       <div class="card-img-placeholder">🪨</div>
       <div class="card-body">
         <div class="card-badge" style="background:#3A3F45;color:#E5E7EB">🪨 Unclassified</div>
@@ -729,6 +732,24 @@
     }
     
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+    // Only cards with a real photo are shown; recompute stats and hide empty filter chips.
+    (function () {
+      const shown = Array.from(document.querySelectorAll('.specimen-card')).filter(c => c.dataset.photo !== 'no');
+      const cats = new Set(shown.map(c => c.dataset.category));
+      const sheets = new Set(shown.map(c => c.dataset.sheet));
+      let grams = 0;
+      shown.forEach(c => { const m = (c.querySelector('.card-weight') || {}).textContent; const g = m && m.match(/([\d.]+)\s*g/); if (g) grams += parseFloat(g[1]); });
+      const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+      set('stat-specimens', shown.length);
+      set('stat-categories', cats.size);
+      set('stat-locations', sheets.size);
+      set('stat-weight', grams >= 1000 ? (grams / 1000).toFixed(2) + 'kg' : Math.round(grams) + 'g');
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        const m = (b.getAttribute('onclick') || '').match(/filterBy(Category|Sheet)\('(.*)'\)/);
+        if (!m || m[2] === 'all') return;
+        if (!(m[1] === 'Category' ? cats : sheets).has(m[2])) b.hidden = true;
+      });
+    })();
   </script>
 <script src="doors.js" defer></script>
 </body>
