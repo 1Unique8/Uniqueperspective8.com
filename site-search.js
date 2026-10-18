@@ -2,7 +2,7 @@
   var SHOP = "https://shop.uniqueperspective8.com";
   var PAGES = [
     { title: "Home", href: "index.html", group: "House", keys: "home earth atelier field stone" },
-    { title: "About", href: "about.html", group: "House", keys: "morgan sugg founder story metal free miner" },
+    { title: "About", href: "about.html", group: "House", keys: "up8 founder story metal free miner" },
     { title: "Ethics & Sustainability", href: "ethics.html", group: "House", keys: "ethics sourcing fmc stewardship" },
     { title: "Contact", href: "contact.html", group: "House", keys: "email write contact" },
     { title: "FAQ", href: "faq.html", group: "House", keys: "questions shipping returns" },
