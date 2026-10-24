@@ -12,7 +12,7 @@ Grok cannot write to shop.uniqueperspective8.com without Woo REST keys. This fil
 | --- | --- |
 | SKU | `UP8-WEB-AUDIT-SNAPSHOT-001` |
 | Name | The Perspective Audit™ — Snapshot |
-| Regular price | 297 |
+| Regular price | 147 |
 | Published | yes |
 | Virtual | yes |
 | Manage stock | no |
@@ -23,7 +23,7 @@ Do not create `UP8-CON-001`. That SKU is retired.
 
 ## After import
 
-1. Open the product. Confirm SKU and $297.
+1. Open the product. Confirm SKU and $147.
 2. Paste the permalink into Shop Catalog `Woo URL` and `Woo product slug`.
 3. Set Sync status to Mapped.
 4. Only then consider flipping `WC_ALLOW_CREATE` on the GitHub Action.
