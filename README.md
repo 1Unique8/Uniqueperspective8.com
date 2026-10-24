@@ -1,6 +1,6 @@
 # Unique Perspective
 
-**Small Mining · Homemade Jewelry · Dropshipping**
+**[Unique Perspective 8](https://uniqueperspective8.com): handmade wire-wrapped jewelry and hand-collected stones from BC's South Okanagan.**
 
 > Dug by hand. Crafted by heart.
 
