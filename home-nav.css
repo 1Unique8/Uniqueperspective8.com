@@ -23,7 +23,11 @@
   .up8-menu{border-bottom:1px solid var(--line)}
   .up8-menu>button{width:100%;justify-content:space-between;padding:0 4px}
   .up8-panel{position:static;min-width:0;max-height:none;box-shadow:none;border:0;background:transparent;padding:0 0 10px}
-  .up8-nav .shop-button{display:none}
+  .up8-nav .shop-button{display:inline-flex;margin-left:0}
   .site-search{max-width:none}
 }
 @media(max-width:620px){.doors-four{grid-template-columns:1fr}header .site-search{display:none}}
+
+/* Demoted / secondary CTA — steel outline, not competing with primary gold */
+.secondary-button{min-height:44px;display:inline-flex;align-items:center;padding:0 18px;border:1px solid #71797E;color:#71797E;background:transparent;font-size:13px;letter-spacing:1px;text-transform:uppercase}
+.secondary-button:hover,.secondary-button:focus-visible{border-color:#CFB53B;color:#CFB53B}
