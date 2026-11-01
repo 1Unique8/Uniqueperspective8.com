@@ -1,0 +1,29 @@
+name: grok-review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Grok CLI
+        run: |
+          curl -fsSL https://x.ai/cli/install.sh | bash
+          echo "$HOME/.grok/bin" >> $GITHUB_PATH
+
+      - name: Review PR with Grok
+        env:
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          grok --no-auto-update -p "Review this pull request for bugs, regressions, security issues, and missing tests. Focus on the changed files. Be concise and actionable. Post the review as a PR comment. For UP8 sites, do not invent prices or policies." --always-approve
