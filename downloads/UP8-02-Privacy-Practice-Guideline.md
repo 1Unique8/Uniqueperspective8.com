@@ -23,7 +23,6 @@ To fill orders, ship parcels, answer questions, keep ordinary books, and keep th
 Keep records as long as the sale, a return, or bookkeeping requires. A person may ask what is held, and may ask for correction or deletion where the law allows.
 
 ## Contacts
-questions4uniqueperspective@gmail.com
-payments4uniqueperspective@gmail.com
+customer_service@uniqueperspective8.com
 
 The site is not directed at children. This is practice, not legal advice.
