@@ -10,6 +10,7 @@
     { title: "Services", href: "services.html", group: "House", keys: "perspective audit snapshot bundle pricing" },
     { title: "Influencers", href: "influencer-report.html", group: "House", keys: "influencer report" },
     { title: "Our Story", href: "story.html", group: "House", keys: "story founder proverb fall seven stand eight okanagan" },
+    { title: "Fieldforge", href: "fieldforge.html", group: "House", keys: "fieldforge specimen intake pwa ledger diagnostics field workshop" },
     { title: "How to Read a UP8 Provenance Record", href: "blog/how-to-read-a-up8-provenance-record.html", group: "Journal", keys: "provenance record fmc area code roadcut" },
     { title: "What Ethical Collecting Means at UP8", href: "blog/what-ethical-collecting-means-at-up8.html", group: "Journal", keys: "ethics ethical collecting recycled copper sterling wire mixed metal" },
     { title: "South Okanagan Specimen Spotlight", href: "blog/south-okanagan-specimen-spotlight.html", group: "Journal", keys: "specimens oliver penticton agate chalcedony gneiss" },
