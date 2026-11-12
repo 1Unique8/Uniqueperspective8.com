@@ -22,6 +22,8 @@
     '<a href="https://uniqueperspective8.com/press.html">Press &amp; Partners</a>',
     '<a href="https://uniqueperspective8.com/ethics.html">Ethics</a>',
     '<a href="https://uniqueperspective8.com/products.html">Available</a>',
+    '<a href="https://uniqueperspective8.com/faq.html">FAQ</a>',
+    '<a href="https://uniqueperspective8.com/help.html">Help</a>',
     '<a href="https://uniqueperspective8.com/contact.html">Contact</a>',
     '<a href="https://services.uniqueperspective8.com/Services/">Audit Snapshot</a>',
     '<a href="https://services.uniqueperspective8.com/Services/">Audit Bundle</a>',
