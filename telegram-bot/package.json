@@ -1,0 +1,12 @@
+{
+  "name": "up8-telegram-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot for Unique Perspective 8 shop channel",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "telegraf": "^4.16.3"
+  }
+}
